@@ -3,3 +3,5 @@ scipy>=1.3.0
 pandas>=0.24.1
 networkx>=2.3
 torch>1.7.0
+tensorflow==1.13.2
+cdt==0.6.0
