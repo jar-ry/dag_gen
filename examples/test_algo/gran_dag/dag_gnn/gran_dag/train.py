@@ -235,28 +235,28 @@ def train(model, gt_adjacency, train_data, test_data, opt, metrics_callback, plo
                 current_adj = current_adj.cpu().numpy()
                 fn, fp, rev = edge_errors(current_adj, gt_adjacency)
 
-            # metrics_callback(stage="train", step=iter,
-            #                  metrics={"aug-lagrangian": aug_lagrangian.item(),
-            #                           "aug-lagrangian-moving-avg": aug_lagrangian_ma[iter + 1],
-            #                           "aug-lagrangian-val": aug_lagrangians_val[-1][1],
-            #                           "nll": nlls[-1],
-            #                           "nll-val": nlls_val[-1],
-            #                           "nll-gap": nlls_val[-1] - nlls[-1],
-            #                           "grad-norm-moving-average": grad_norm_ma[iter + 1],
-            #                           "delta_lambda": delta_lambda,
-            #                           "omega_lambda": opt.omega_lambda,
-            #                           "delta_mu": delta_mu,
-            #                           "omega_mu": opt.omega_mu,
-            #                           "constraint_violation": h.item(),
-            #                           "mu": mu,
-            #                           "lambda": lamb,
-            #                           "initial_lr": opt.lr,
-            #                           "current_lr": opt.lr,
-            #                           "fn_edges": fn,
-            #                           "fp_edges": fp,
-            #                           "rev_edges": rev,
-            #                           "shd": fn + fp + rev
-            #                           })
+            metrics_callback(stage="train", step=iter,
+                             metrics={"aug-lagrangian": aug_lagrangian.item(),
+                                      "aug-lagrangian-moving-avg": aug_lagrangian_ma[iter + 1],
+                                      "aug-lagrangian-val": aug_lagrangians_val[-1][1],
+                                      "nll": nlls[-1],
+                                      "nll-val": nlls_val[-1],
+                                      "nll-gap": nlls_val[-1] - nlls[-1],
+                                      "grad-norm-moving-average": grad_norm_ma[iter + 1],
+                                      "delta_lambda": delta_lambda,
+                                      "omega_lambda": opt.omega_lambda,
+                                      "delta_mu": delta_mu,
+                                      "omega_mu": opt.omega_mu,
+                                      "constraint_violation": h.item(),
+                                      "mu": mu,
+                                      "lambda": lamb,
+                                      "initial_lr": opt.lr,
+                                      "current_lr": opt.lr,
+                                      "fn_edges": fn,
+                                      "fp_edges": fp,
+                                      "rev_edges": rev,
+                                      "shd": fn + fp + rev
+                                      })
 
         # plot
         # if iter % opt.plot_freq == 0:
@@ -382,10 +382,10 @@ def to_dag(model, train_data, test_data, opt, metrics_callback, plotting_callbac
             to_keep = torch.Tensor(A > t + EPSILON)
             new_adj = model.adjacency * to_keep
 
-            # metrics_callback(stage=stage_name, step=step,
-            #                  metrics={"threshold": t,
-            #                           "edges": new_adj.sum().item()},
-            #                  throttle=False)
+            metrics_callback(stage=stage_name, step=step,
+                             metrics={"threshold": t,
+                                      "edges": new_adj.sum().item()},
+                             throttle=False)
 
             if is_acyclic(new_adj):
                 model.adjacency.copy_(new_adj)
@@ -406,10 +406,10 @@ def to_dag(model, train_data, test_data, opt, metrics_callback, plotting_callbac
     fn, fp, rev = edge_errors(pred_adj_, train_adj_)
     del train_adj_, pred_adj_
 
-    # metrics_callback(stage=stage_name, step=0,
-    #                  metrics={"nll_val": nll_val, "shd": shd, "shd_cpdag": shd_cpdag, "fn": fn, "fp": fp,
-    #                           "rev": rev},
-    #                  throttle=False)
+    metrics_callback(stage=stage_name, step=0,
+                     metrics={"nll_val": nll_val, "shd": shd, "shd_cpdag": shd_cpdag, "fn": fn, "fp": fp,
+                              "rev": rev},
+                     throttle=False)
 
     timing = time.time() - time0
 
@@ -502,9 +502,9 @@ def cam_pruning(model, train_data, test_data, opt, metrics_callback, plotting_ca
     fn, fp, rev = edge_errors(pred_adj_, train_adj_)
     del train_adj_, pred_adj_
 
-    # metrics_callback(stage=stage_name, step=0,
-    #                  metrics={"nll_val": nll_val, "shd": shd, "shd_cpdag": shd_cpdag, "fn": fn, "fp": fp,
-    #                           "rev": rev}, throttle=False)
+    metrics_callback(stage=stage_name, step=0,
+                     metrics={"nll_val": nll_val, "shd": shd, "shd_cpdag": shd_cpdag, "fn": fn, "fp": fp,
+                              "rev": rev}, throttle=False)
 
     timing = time.time() - time0
 
@@ -605,19 +605,19 @@ def retrain(model, train_data, test_data, dag_folder, opt, metrics_callback, plo
                 else:
                     patience -= 1
 
-        # # log metrics
-        # if iter % 100 == 0:
-        #     print("Iteration:", iter)
-        #     metrics_callback(stage=stage_name, step=iter,
-        #                      metrics={"loss": loss.item(),
-        #                               "loss-val": losses_val[-1][1],
-        #                               "nll": nlls[-1],
-        #                               "nll-val": nlls_val[-1],
-        #                               "grad-norm-moving-average": grad_norm_ma[iter + 1],
-        #                               "patience": patience,
-        #                               "best-nll-val": best_nll_val})
+        # log metrics
+        if iter % 100 == 0:
+            print("Iteration:", iter)
+            metrics_callback(stage=stage_name, step=iter,
+                             metrics={"loss": loss.item(),
+                                      "loss-val": losses_val[-1][1],
+                                      "nll": nlls[-1],
+                                      "nll-val": nlls_val[-1],
+                                      "grad-norm-moving-average": grad_norm_ma[iter + 1],
+                                      "patience": patience,
+                                      "best-nll-val": best_nll_val})
 
-        # # plot
+        # plot
         # if iter % opt.plot_freq == 0:
         #     plot_learning_curves_retrain(
         #         losses, losses_val, nlls, nlls_val, save_path)

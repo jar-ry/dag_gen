@@ -5,7 +5,7 @@ from gran_dag.data import DataManagerFile
 from gran_dag.dag_optim import is_acyclic
 from gran_dag.utils.metrics import edge_errors
 from gran_dag.utils.save import dump
-from gran_dag.plot import plot_adjacency
+# from gran_dag.plot import plot_adjacency
 import sys
 import os
 import time
