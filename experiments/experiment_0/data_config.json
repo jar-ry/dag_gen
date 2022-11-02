@@ -1,0 +1,30 @@
+{
+    "mix_mechanism": {
+        "medium_all": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.4,
+            "selection_bias_nodes": 1,
+            "selection_bias_ratio": 0.5,
+            "selection_bias_range": [0, 0.5],
+            "npoints": 150,
+            "nodes": 4,
+            "parents_max": 1,
+            "confounders": 1,
+            "num_unfaithful_nodes": 1,
+            "random_seed": 42
+        },
+        "medium_none": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.4,
+            "selection_bias_nodes": 0,
+            "npoints": 150,
+            "nodes": 4,
+            "parents_max": 1,
+            "confounders": 0,
+            "num_unfaithful_nodes": 0,
+            "random_seed": 42
+        }
+    }
+}
