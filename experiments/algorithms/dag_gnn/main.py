@@ -1,11 +1,11 @@
-from dag_gnn.utils import load_numpy_data
-from dag_gnn.train import dag_gnn, retrain
-from gran_dag.train import cam_pruning_, pns_
-from gran_dag.data import DataManagerFile
-from gran_dag.dag_optim import is_acyclic
-from gran_dag.utils.metrics import edge_errors
-from gran_dag.utils.save import dump
-from gran_dag.plot import plot_adjacency
+from .dag_gnn.utils import load_numpy_data
+from .dag_gnn.train import dag_gnn, retrain
+from .gran_dag.train import cam_pruning_, pns_
+from .gran_dag.data import DataManagerFile
+from .gran_dag.dag_optim import is_acyclic
+from .gran_dag.utils.metrics import edge_errors
+from .gran_dag.utils.save import dump
+from .gran_dag.plot import plot_adjacency
 import sys
 import os
 import time
@@ -19,7 +19,7 @@ import networkx as nx
 sys.path.append("..")
 
 
-def main(opt, metrics_callback=None, plotting_callback=None):
+def main(opt, metrics_callback= None, plotting_callback=None):
     # Control as much randomness as possible
     torch.manual_seed(opt.random_seed)
     np.random.seed(opt.random_seed)
@@ -73,19 +73,19 @@ def main(opt, metrics_callback=None, plotting_callback=None):
         adj = new_adj
 
     # evaluate held-out likelihood
-    if test_data.dataset is not None:
-        test_data_np = test_data.dataset.unsqueeze(2).detach().cpu().numpy()
-    else:
-        test_data_np = None
-    score_train, score_valid, flag_max_iter_retrain = retrain(
-        opt, train_data_np, test_data_np, gt_dag, adj)
+    # if test_data.dataset is not None:
+    #     test_data_np = test_data.dataset.unsqueeze(2).detach().cpu().numpy()
+    # else:
+    #     test_data_np = None
+    # score_train, score_valid, flag_max_iter_retrain = retrain(
+    #     opt, train_data_np, test_data_np, gt_dag, adj)
 
     # Compute SHD and SID metrics
     # sid = float(cdt.metrics.SID(target=gt_dag, pred=adj))
-    shd = float(cdt.metrics.SHD(target=gt_dag,
-                pred=adj, double_for_anticausal=False))
-    shd_cpdag = float(cdt.metrics.SHD_CPDAG(target=gt_dag, pred=adj))
-    fn, fp, rev = edge_errors(adj, gt_dag)
+    # shd = float(cdt.metrics.SHD(target=gt_dag,
+    #             pred=adj, double_for_anticausal=False))
+    # shd_cpdag = float(cdt.metrics.SHD_CPDAG(target=gt_dag, pred=adj))
+    # fn, fp, rev = edge_errors(adj, gt_dag)
     timing = time.time() - time0
 
     # save
@@ -101,37 +101,37 @@ def main(opt, metrics_callback=None, plotting_callback=None):
 
     dump(opt, opt.exp_path, 'opt')
     dump(timing, opt.exp_path, 'timing', True)
-    dump(score_train, opt.exp_path, 'train_score', True)
-    dump(score_valid, opt.exp_path, 'test_score', True)
+    # dump(score_train, opt.exp_path, 'train_score', True)
+    # dump(score_valid, opt.exp_path, 'test_score', True)
     # dump(sid, opt.exp_path, 'sid', True)
-    dump(shd, opt.exp_path, 'shd', True)
+    # dump(shd, opt.exp_path, 'shd', True)
     np.save(os.path.join(opt.exp_path, "DAG"), adj)
 
     #plot_adjacency(gt_dag, adj, opt.exp_path)
 
 
-def _print_metrics(stage, step, metrics, throttle=None):
-    for k, v in metrics.items():
-        print("    %s:" % k, v)
+# def _print_metrics(stage, step, metrics, throttle=None):
+#     for k, v in metrics.items():
+#         print("    %s:" % k, v)
 
 
-if __name__ == "__main__":
+def run_dag_gnn(config):
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--data-path', type=str, default=None,
+    parser.add_argument('--data-path', type=str, default=config['data_path'],
                         help='Path to data files')
-    parser.add_argument('--i-dataset', type=str, default=None,
+    parser.add_argument('--i-dataset', type=str, default=1,
                         help='dataset index')
-    parser.add_argument('--exp-path', type=str, default='exp',
+    parser.add_argument('--exp-path', type=str, default=config['output_path'],
                         help='Path to experiments')
     parser.add_argument('--pns', action='store_true')
     parser.add_argument('--pns-thres', type=float, default=0.75)
     parser.add_argument('--cutoff', type=float, default=0.001)
 
     # -----------data parameters ------
-    parser.add_argument('--data_sample_size', type=int, default=1000,
+    parser.add_argument('--data_sample_size', type=int, default=config['data_size'],
                         help='the number of samples of data')
-    parser.add_argument('--data_variable_size', type=int, default=10,
+    parser.add_argument('--data_variable_size', type=int, default=config['num_vars'],
                         help='the number of variables in synthetic generated data')
     parser.add_argument('--x_dims', type=int, default=1,  # changed here
                         help='The number of input dimensions: default 1.')
@@ -157,7 +157,7 @@ if __name__ == "__main__":
     parser.add_argument('--no-cuda', action='store_true', default=True,
                         help='Disables CUDA training.')
     # parser.add_argument('--seed', type=int, default=42, help='Random seed.') not used anywhere...
-    parser.add_argument('--epochs', type=int, default=200,
+    parser.add_argument('--epochs', type=int, default=config['train_iter'],
                         help='Number of epochs to train.')
     parser.add_argument('--batch-size', type=int, default=100,
                         # note: should be divisible by sample size, otherwise throw an error

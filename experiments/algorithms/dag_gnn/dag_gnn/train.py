@@ -109,12 +109,8 @@ def dag_gnn(args, train_data, gt_adjacency, mask_A):
 
     # Save model and meta-data. Always saves in a new sub-folder.
     if args.save_folder:
-        exp_counter = 0
-        now = datetime.datetime.now()
-        timestamp = now.isoformat()
-        save_folder = '{}/exp{}/'.format(args.save_folder, timestamp)
+        save_folder = args.save_folder
         # safe_name = save_folder.text.replace('/', '_')
-        os.makedirs(save_folder)
         meta_file = os.path.join(save_folder, 'metadata.pkl')
         encoder_file = os.path.join(save_folder, 'encoder.pt')
         decoder_file = os.path.join(save_folder, 'decoder.pt')
@@ -304,12 +300,12 @@ def dag_gnn(args, train_data, gt_adjacency, mask_A):
             graph = origin_A.data.clone().numpy()
             graph[np.abs(graph) < args.graph_threshold] = 0
 
-            fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
+            # fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
 
             mse_train.append(F.mse_loss(preds, target).item())
             nll_train.append(loss_nll.item())
             kl_train.append(loss_kl.item())
-            shd_trian.append(shd)
+            # shd_trian.append(shd)
 
         if (np.mean(kl_train) + np.mean(nll_train)) < best_val_loss:
             best_graph = np.copy(graph)
@@ -320,24 +316,24 @@ def dag_gnn(args, train_data, gt_adjacency, mask_A):
         kl_val = []
         mse_val = []
 
-        print('Epoch: {:04d}'.format(epoch),
-              'nll_train: {:.10f}'.format(np.mean(nll_train)),
-              'kl_train: {:.10f}'.format(np.mean(kl_train)),
-              'ELBO_loss: {:.10f}'.format(np.mean(kl_train) + np.mean(nll_train)),
-              'mse_train: {:.10f}'.format(np.mean(mse_train)),
-              'shd_trian: {:.10f}'.format(np.mean(shd_trian)),
-              'time: {:.4f}s'.format(time.time() - t))
+        # print('Epoch: {:04d}'.format(epoch),
+        #       'nll_train: {:.10f}'.format(np.mean(nll_train)),
+        #       'kl_train: {:.10f}'.format(np.mean(kl_train)),
+        #       'ELBO_loss: {:.10f}'.format(np.mean(kl_train) + np.mean(nll_train)),
+        #       'mse_train: {:.10f}'.format(np.mean(mse_train)),
+        #       'shd_trian: {:.10f}'.format(np.mean(shd_trian)),
+        #       'time: {:.4f}s'.format(time.time() - t))
         if args.save_folder and np.mean(nll_val) < best_val_loss:
             torch.save(encoder.state_dict(), encoder_file)
             torch.save(decoder.state_dict(), decoder_file)
             print('Best model so far, saving...')
-            print('Epoch: {:04d}'.format(epoch),
-                  'nll_train: {:.10f}'.format(np.mean(nll_train)),
-                  'kl_train: {:.10f}'.format(np.mean(kl_train)),
-                  'ELBO_loss: {:.10f}'.format(np.mean(kl_train) + np.mean(nll_train)),
-                  'mse_train: {:.10f}'.format(np.mean(mse_train)),
-                  'shd_trian: {:.10f}'.format(np.mean(shd_trian)),
-                  'time: {:.4f}s'.format(time.time() - t), file=log)
+            # print('Epoch: {:04d}'.format(epoch),
+            #       'nll_train: {:.10f}'.format(np.mean(nll_train)),
+            #       'kl_train: {:.10f}'.format(np.mean(kl_train)),
+            #       'ELBO_loss: {:.10f}'.format(np.mean(kl_train) + np.mean(nll_train)),
+            #       'mse_train: {:.10f}'.format(np.mean(mse_train)),
+            #       'shd_trian: {:.10f}'.format(np.mean(shd_trian)),
+            #       'time: {:.4f}s'.format(time.time() - t), file=log)
             log.flush()
 
         if 'graph' not in vars():
@@ -446,12 +442,7 @@ def retrain(args, train_data, valid_data, gt_adjacency, mask_A):
 
     # Save model and meta-data. Always saves in a new sub-folder.
     if args.save_folder:
-        exp_counter = 0
-        now = datetime.datetime.now()
-        timestamp = now.isoformat()
-        save_folder = '{}/exp{}/'.format(args.save_folder, timestamp)
-        # safe_name = save_folder.text.replace('/', '_')
-        os.makedirs(save_folder)
+        save_folder = args.save_folder
         meta_file = os.path.join(save_folder, 'metadata.pkl')
         encoder_file = os.path.join(save_folder, 'encoder.pt')
         decoder_file = os.path.join(save_folder, 'decoder.pt')

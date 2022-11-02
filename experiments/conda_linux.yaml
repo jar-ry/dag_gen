@@ -1,0 +1,13 @@
+name: arm_py37_env
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  - python=3.7.9
+  - pip=21.2.4
+  - gcc_linux-64=7.3.0
+  - gxx_linux-64=7.3.0
+  - unixodbc=2.3.7
+  - jq=1.6
+  - pip:
+    - -r requirements.txt

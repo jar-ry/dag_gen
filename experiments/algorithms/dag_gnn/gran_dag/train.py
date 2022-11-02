@@ -98,8 +98,8 @@ def pns(model, train_data, test_data, num_neighbors, thresh, exp_path, metrics_c
             model.adjacency.detach().cpu().numpy())
 
     # plot
-    plot_adjacency(model.adjacency.detach().cpu().numpy(),
-                   train_data.adjacency.detach().cpu().numpy(), save_path)
+    # plot_adjacency(model.adjacency.detach().cpu().numpy(),
+    #                train_data.adjacency.detach().cpu().numpy(), save_path)
 
     return model
 
@@ -220,12 +220,12 @@ def train(model, gt_adjacency, train_data, test_data, opt, metrics_callback, plo
 
         # log metrics
         if iter % 100 == 0:
-            print("Iteration:", iter)
-            if opt.num_vars <= 5:
-                print("    w_adj:\n", w_adj.detach().cpu().numpy())
-                print("    current_adjacency:\n",
-                      model.adjacency.detach().cpu().numpy())
-                print("    gt_adjacency:\n", gt_adjacency)
+            # print("Iteration:", iter)
+            # if opt.num_vars <= 5:
+            #     print("    w_adj:\n", w_adj.detach().cpu().numpy())
+            #     print("    current_adjacency:\n",
+            #           model.adjacency.detach().cpu().numpy())
+            #     print("    gt_adjacency:\n", gt_adjacency)
 
             # XXX: just for debug (graph metrics in real-time)
             with torch.no_grad():
@@ -259,15 +259,15 @@ def train(model, gt_adjacency, train_data, test_data, opt, metrics_callback, plo
             #                           })
 
         # plot
-        if iter % opt.plot_freq == 0:
-            if not opt.no_w_adjs_log:
-                plot_weighted_adjacency(w_adjs[:iter + 1], gt_adjacency, opt.exp_path,
-                                        name="w_adj", mus=mus, lambdas=lambdas,
-                                        plotting_callback=plotting_callback)
-            plot_adjacency(model.adjacency.detach().cpu().numpy(),
-                           gt_adjacency, opt.exp_path)
-            plot_learning_curves(not_nlls, aug_lagrangians, aug_lagrangian_ma[:iter], aug_lagrangians_val, nlls,
-                                 nlls_val, opt.exp_path)
+        # if iter % opt.plot_freq == 0:
+        #     if not opt.no_w_adjs_log:
+        #         plot_weighted_adjacency(w_adjs[:iter + 1], gt_adjacency, opt.exp_path,
+        #                                 name="w_adj", mus=mus, lambdas=lambdas,
+        #                                 plotting_callback=plotting_callback)
+        #     plot_adjacency(model.adjacency.detach().cpu().numpy(),
+        #                    gt_adjacency, opt.exp_path)
+        #     plot_learning_curves(not_nlls, aug_lagrangians, aug_lagrangian_ma[:iter], aug_lagrangians_val, nlls,
+        #                          nlls_val, opt.exp_path)
 
         # Does the augmented lagrangian converged?
         if h > opt.h_threshold:
@@ -297,56 +297,40 @@ def train(model, gt_adjacency, train_data, test_data, opt, metrics_callback, plo
                     optimizer = torch.optim.SGD(
                         model.parameters(), lr=opt.lr_reinit)
 
-        else:
-            timing = time.time() - time0
+    timing = time.time() - time0
 
-            # Final clamping of all edges == 0
-            with torch.no_grad():
-                to_keep = (w_adj > 0).type(torch.Tensor)
-                model.adjacency *= to_keep
+    # Final clamping of all edges == 0
+    with torch.no_grad():
+        to_keep = (w_adj > 0).type(torch.Tensor)
+        model.adjacency *= to_keep
 
-            # compute nll on train and validation set
-            weights, biases, extra_params = model.get_parameters(mode="wbx")
-            x, _ = train_data.sample(train_data.num_samples)
-            # Since we do not have a DAG yet, this is not really a negative log likelihood.
-            nll_train = - \
-                torch.mean(model.compute_log_likelihood(
-                    x, weights, biases, extra_params))
+    # Save
+    if not opt.no_w_adjs_log:
+        w_adjs = w_adjs[:iter]
+    dump(model, save_path, 'model')
+    dump(opt, save_path, 'opt')
+    if opt.num_vars <= 50 and not opt.no_w_adjs_log:
+        dump(w_adjs, save_path, 'w_adjs')
+    dump(not_nlls, save_path, 'not-nlls')
+    dump(aug_lagrangians, save_path, 'aug-lagrangians')
+    dump(aug_lagrangian_ma[:iter], save_path, 'aug-lagrangian-ma')
+    dump(aug_lagrangians_val, save_path, 'aug-lagrangians-val')
+    dump(grad_norms, save_path, 'grad-norms')
+    dump(grad_norm_ma[:iter], save_path, 'grad-norm-ma')
+    dump(timing, save_path, 'timing')
+    np.save(os.path.join(save_path, "DAG"),
+            model.adjacency.detach().cpu().numpy())
 
-            x, _ = test_data.sample(test_data.num_samples)
-            nll_val = - \
-                torch.mean(model.compute_log_likelihood(
-                    x, weights, biases, extra_params))
+    # plot
+    # if not opt.no_w_adjs_log:
+    #     plot_weighted_adjacency(w_adjs, gt_adjacency, save_path,
+    #                             name="w_adj", mus=mus, lambdas=lambdas)
+    # plot_adjacency(model.adjacency.detach(
+    # ).cpu().numpy(), gt_adjacency, save_path)
+    # plot_learning_curves(not_nlls, aug_lagrangians, aug_lagrangian_ma[:iter], aug_lagrangians_val, nlls,
+    #                         nlls_val, save_path)
 
-            # Save
-            if not opt.no_w_adjs_log:
-                w_adjs = w_adjs[:iter]
-            dump(model, save_path, 'model')
-            dump(opt, save_path, 'opt')
-            if opt.num_vars <= 50 and not opt.no_w_adjs_log:
-                dump(w_adjs, save_path, 'w_adjs')
-            dump(nll_train, save_path, 'pseudo-nll-train')
-            dump(nll_val, save_path, 'pseudo-nll-val')
-            dump(not_nlls, save_path, 'not-nlls')
-            dump(aug_lagrangians, save_path, 'aug-lagrangians')
-            dump(aug_lagrangian_ma[:iter], save_path, 'aug-lagrangian-ma')
-            dump(aug_lagrangians_val, save_path, 'aug-lagrangians-val')
-            dump(grad_norms, save_path, 'grad-norms')
-            dump(grad_norm_ma[:iter], save_path, 'grad-norm-ma')
-            dump(timing, save_path, 'timing')
-            np.save(os.path.join(save_path, "DAG"),
-                    model.adjacency.detach().cpu().numpy())
-
-            # plot
-            if not opt.no_w_adjs_log:
-                plot_weighted_adjacency(w_adjs, gt_adjacency, save_path,
-                                        name="w_adj", mus=mus, lambdas=lambdas)
-            plot_adjacency(model.adjacency.detach(
-            ).cpu().numpy(), gt_adjacency, save_path)
-            plot_learning_curves(not_nlls, aug_lagrangians, aug_lagrangian_ma[:iter], aug_lagrangians_val, nlls,
-                                 nlls_val, save_path)
-
-            return model
+    return model
 
 
 def to_dag(model, train_data, test_data, opt, metrics_callback, plotting_callback, stage_name="to-dag"):
@@ -378,7 +362,7 @@ def to_dag(model, train_data, test_data, opt, metrics_callback, plotting_callbac
         # Find the smallest threshold that removes all cycle-inducing edges
         thresholds = np.unique(A)
         for step, t in enumerate(thresholds):
-            print("Edges/thresh", model.adjacency.sum(), t)
+            # print("Edges/thresh", model.adjacency.sum(), t)
             to_keep = torch.Tensor(A > t + EPSILON)
             new_adj = model.adjacency * to_keep
 
@@ -422,8 +406,8 @@ def to_dag(model, train_data, test_data, opt, metrics_callback, plotting_callbac
             model.adjacency.detach().cpu().numpy())
 
     # plot adjacency
-    plot_adjacency(model.adjacency.detach().cpu().numpy(),
-                   train_data.adjacency.detach().cpu().numpy(), save_path)
+    # plot_adjacency(model.adjacency.detach().cpu().numpy(),
+    #                train_data.adjacency.detach().cpu().numpy(), save_path)
 
     return model
 
@@ -517,8 +501,8 @@ def cam_pruning(model, train_data, test_data, opt, metrics_callback, plotting_ca
             model.adjacency.detach().cpu().numpy())
 
     # plot adjacency
-    plot_adjacency(model.adjacency.detach().cpu().numpy(),
-                   train_data.adjacency.detach().cpu().numpy(), save_path)
+    # plot_adjacency(model.adjacency.detach().cpu().numpy(),
+    #                train_data.adjacency.detach().cpu().numpy(), save_path)
 
     return model
 
@@ -617,7 +601,7 @@ def retrain(model, train_data, test_data, dag_folder, opt, metrics_callback, plo
         #                               "patience": patience,
         #                               "best-nll-val": best_nll_val})
 
-        # # plot
+        # plot
         # if iter % opt.plot_freq == 0:
         #     plot_learning_curves_retrain(
         #         losses, losses_val, nlls, nlls_val, save_path)
@@ -642,7 +626,7 @@ def retrain(model, train_data, test_data, dag_folder, opt, metrics_callback, plo
             dump(timing, save_path, 'timing')
 
             # plot
-            plot_learning_curves_retrain(
-                losses, losses_val, nlls, nlls_val, save_path)
+            # plot_learning_curves_retrain(
+            #     losses, losses_val, nlls, nlls_val, save_path)
 
             return model
