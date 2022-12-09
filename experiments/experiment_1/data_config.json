@@ -1,25 +1,107 @@
 {
     "mix_mechanism": {
-        "medium_all": {
+        "medium_all_1": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
-            "noise_coeff": 0.4,
             "selection_bias_nodes": 1,
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
-            "npoints": 10000,
+            "npoints": 5000,
             "nodes": 12,
             "parents_max": 5,
             "confounders": 1,
             "num_unfaithful_nodes": 1,
             "random_seed": 42
         },
-        "medium_none": {
+        "medium_no_issue_noise_1": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
-            "noise_coeff": 0.4,
             "selection_bias_nodes": 0,
-            "npoints": 10000,
+            "npoints": 5000,
+            "nodes": 12,
+            "parents_max": 5,
+            "confounders": 0,
+            "num_unfaithful_nodes": 0,
+            "random_seed": 42
+        },
+        "medium_no_issue_no_noise_1": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0,
+            "selection_bias_nodes": 0,
+            "npoints": 5000,
+            "nodes": 12,
+            "parents_max": 5,
+            "confounders": 0,
+            "num_unfaithful_nodes": 0,
+            "random_seed": 42
+        },
+        "medium_all_2": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "selection_bias_nodes": 1,
+            "selection_bias_ratio": 0.5,
+            "selection_bias_range": [0, 0.5],
+            "npoints": 5000,
+            "nodes": 12,
+            "parents_max": 5,
+            "confounders": 1,
+            "num_unfaithful_nodes": 1,
+            "random_seed": 43
+        },
+        "medium_no_issue_noise_2": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "selection_bias_nodes": 0,
+            "npoints": 5000,
+            "nodes": 12,
+            "parents_max": 5,
+            "confounders": 0,
+            "num_unfaithful_nodes": 0,
+            "random_seed": 42
+        },
+        "medium_no_issue_no_noise_2": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0,
+            "selection_bias_nodes": 0,
+            "npoints": 5000,
+            "nodes": 12,
+            "parents_max": 5,
+            "confounders": 0,
+            "num_unfaithful_nodes": 0,
+            "random_seed": 42
+        },
+        "medium_all_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "selection_bias_nodes": 1,
+            "selection_bias_ratio": 0.5,
+            "selection_bias_range": [0, 0.5],
+            "npoints": 5000,
+            "nodes": 12,
+            "parents_max": 5,
+            "confounders": 1,
+            "num_unfaithful_nodes": 1,
+            "random_seed": 44
+        },
+        "medium_no_issue_noise_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "selection_bias_nodes": 0,
+            "npoints": 5000,
+            "nodes": 12,
+            "parents_max": 5,
+            "confounders": 0,
+            "num_unfaithful_nodes": 0,
+            "random_seed": 42
+        },
+        "medium_no_issue_no_noise_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0,
+            "selection_bias_nodes": 0,
+            "npoints": 5000,
             "nodes": 12,
             "parents_max": 5,
             "confounders": 0,

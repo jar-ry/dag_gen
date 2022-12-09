@@ -88,7 +88,8 @@ def pns(model, train_data, test_data, num_neighbors, thresh, exp_path, metrics_c
     with torch.no_grad():
         model.adjacency.copy_(torch.Tensor(model_adj))
 
-    timing = time.time() - time0
+    time1 = time.time()
+    timing = time1 - time0
     print("PNS took {}s".format(timing))
 
     # save
