@@ -1,3 +1,4 @@
 {
-    "python.defaultInterpreterPath": "~/Work/dag_gen/.venv"
+    "python.defaultInterpreterPath": "~/Work/dag_gen/.venv",
+    "python.formatting.provider": "black"
 }

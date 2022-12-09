@@ -37,7 +37,7 @@ import torch as th
 class LinearMechanism(object):
     """Linear mechanism, where Effect = alpha*Cause + Noise."""
 
-    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.4, unfaithful_noise_coeff=0.3):
+    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2):
         """Init the mechanism."""
         super(LinearMechanism, self).__init__()
         self.n_causes = ncauses
@@ -61,12 +61,12 @@ class LinearMechanism(object):
         effect[:, 0] = effect[:, 0] + self.noise[:, 0]
         unfaithful_effect[:, 0] = unfaithful_effect[:, 0] + \
             self.unfaithful_noise[:, 0]
-        return effect, unfaithful_effect
+        return effect-unfaithful_effect, np.sum(causes, axis=1)
 
 
 class SigmoidAM_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.4, unfaithful_noise_coeff=0.3):
+    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2):
         """Init the mechanism."""
         super(SigmoidAM_Mechanism, self).__init__()
         self.n_causes = ncauses
@@ -103,12 +103,12 @@ class SigmoidAM_Mechanism(object):
         unfaithful_effect[:, 0] = unfaithful_effect[:, 0] + \
             self.unfaithful_noise[:, 0]
 
-        return effect, unfaithful_effect
+        return effect-unfaithful_effect, np.sum(causes, axis=1)
 
 
 class SigmoidMix_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.4, unfaithful_noise_coeff=0.3):
+    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2):
         """Init the mechanism."""
         super(SigmoidMix_Mechanism, self).__init__()
         self.n_causes = ncauses
@@ -146,14 +146,14 @@ class SigmoidMix_Mechanism(object):
         effect = np.zeros((self.points, 1))
         # Compute each cause's contribution
         unfaithful_effect = effect.copy()
-        effect[:, 0] = self.mechanism(causes)[:, 0]
+        effect[:, 0] = self.mechanism(causes, unfaithful=False)[:, 0]
         unfaithful_effect[:, 0] = self.mechanism(causes, unfaithful=True)[:, 0]
-        return effect, unfaithful_effect
+        return effect-unfaithful_effect, np.sum(causes, axis=1)
 
 
 class Polynomial_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, d=2, noise_coeff=.4, unfaithful_noise_coeff=0.3):
+    def __init__(self, ncauses, points, noise_function, d=2, noise_coeff=.3, unfaithful_noise_coeff=0.2):
         """Init the mechanism."""
         super(Polynomial_Mechanism, self).__init__()
         self.n_causes = ncauses
@@ -200,7 +200,7 @@ class Polynomial_Mechanism(object):
             unfaithful_effect[:, 0] = unfaithful_effect[:,
                                                         0] + self.unfaithful_noise[:, 0]
 
-        return effect, unfaithful_effect
+        return effect-unfaithful_effect, np.sum(causes, axis=1)
 
 
 def computeGaussKernel(x):
@@ -211,7 +211,7 @@ def computeGaussKernel(x):
 
 class GaussianProcessAdd_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, noise_coeff=.4, unfaithful_noise_coeff=0.3):
+    def __init__(self, ncauses, points, noise_function, noise_coeff=.3, unfaithful_noise_coeff=0.2):
         """Init the mechanism."""
         super(GaussianProcessAdd_Mechanism, self).__init__()
         self.n_causes = ncauses
@@ -255,12 +255,12 @@ class GaussianProcessAdd_Mechanism(object):
         unfaithful_effect[:, 0] = unfaithful_effect[:, 0] + \
             self.unfaithful_noise[:, 0]
 
-        return effect, unfaithful_effect
+        return effect-unfaithful_effect, np.sum(causes, axis=1)
 
 
 class GaussianProcessMix_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, noise_coeff=.4, unfaithful_noise_coeff=0.3):
+    def __init__(self, ncauses, points, noise_function, noise_coeff=.3, unfaithful_noise_coeff=0.2):
         """Init the mechanism."""
         super(GaussianProcessMix_Mechanism, self).__init__()
         self.n_causes = ncauses
@@ -305,12 +305,12 @@ class GaussianProcessMix_Mechanism(object):
             effect[:, 0] = self.mechanism(self.noise)
             unfaithful_effect[:, 0] = self.mechanism(self.unfaithful_noise)
 
-        return effect, unfaithful_effect
+        return effect-unfaithful_effect, np.sum(causes, axis=1)
 
 
 class NN_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, nh=20, noise_coeff=.4, unfaithful_noise_coeff=0.3):
+    def __init__(self, ncauses, points, noise_function, nh=20, noise_coeff=.3, unfaithful_noise_coeff=0.2):
         """Init the mechanism."""
         super(NN_Mechanism, self).__init__()
         self.n_causes = ncauses
@@ -350,7 +350,7 @@ class NN_Mechanism(object):
             effect[:, 0] = self.mechanism(self.noise)
             unfaithful_effect[:, 0] = self.mechanism(self.unfaithful_noise)
 
-        return effect, unfaithful_effect
+        return effect-unfaithful_effect, np.sum(causes, axis=1)
 
 
 def gmm_cause(points, k=4, p1=2, p2=2):
