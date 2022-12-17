@@ -12,7 +12,7 @@
             "parents_max": 1,
             "confounders": 1,
             "num_unfaithful_nodes": 1,
-            "random_seed": 42
+            "random_seed": 40
         },
         "medium_none": {
             "causal_mechanism": "mix",
@@ -24,7 +24,7 @@
             "parents_max": 1,
             "confounders": 0,
             "num_unfaithful_nodes": 0,
-            "random_seed": 42
+            "random_seed": 40
         }
     }
 }

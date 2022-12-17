@@ -6,3 +6,5 @@ torch>1.7.0
 tensorflow==1.13.1
 cdt==0.6.0
 rpy2==3.1.0
+matplotlib
+seaborn
