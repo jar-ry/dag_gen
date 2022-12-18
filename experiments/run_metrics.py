@@ -5,12 +5,12 @@ import pathlib
 import cdt
 from pandas import DataFrame, concat
 import numpy as np
+from dotenv import load_dotenv
 
+load_dotenv()
 DATA_DIR = "data"
 RESULT_DIR = "results"
-cdt.SETTINGS.rpath = (
-    "C:\Program Files\R\R-4.2.1\\bin\Rscript"  # path to your r executable
-)
+cdt.SETTINGS.rpath = os.getenv("RSCRIPT_PATH")  # path to your r executable
 
 
 def compute_metrics(B_true, B) -> tuple:

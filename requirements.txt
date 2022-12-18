@@ -8,3 +8,4 @@ cdt==0.6.0
 rpy2==3.1.0
 matplotlib
 seaborn
+python-dotenv

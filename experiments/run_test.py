@@ -9,12 +9,13 @@ import cdt
 import time
 from pandas import DataFrame
 from numpy import float32
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DATA_DIR = "data"
 RESULT_DIR = "results"
-cdt.SETTINGS.rpath = (
-    "C:\Program Files\R\R-4.2.1\\bin\Rscript"  # path to your r executable
-)
+cdt.SETTINGS.rpath = os.getenv("RSCRIPT_PATH")  # path to your r executable
 
 
 def run_notears(data: array, output_path: str):
