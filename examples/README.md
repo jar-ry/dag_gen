@@ -15,3 +15,4 @@ R 4.2.1
 
 'install.packages("BiocManager")'
 'BiocManager::install(c("graph", "RBGL", "ggm", "fastICA"))'
+'install.packages("pcalg")'

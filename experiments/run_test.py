@@ -192,13 +192,25 @@ def run_test():
             run_sam(data=test_data, output_path=dataset_result_dir)
 
             # Run RL-BIC
-            run_rl_bic(data_path=dataset_dir, output_path=dataset_result_dir, shape = test_data.shape)
+            run_rl_bic(
+                data_path=dataset_dir,
+                output_path=dataset_result_dir,
+                shape=test_data.shape,
+            )
 
             # Run Gran Dag
-            run_gran_dag(data_path=dataset_dir, output_path=dataset_result_dir, shape = test_data.shape)
+            run_gran_dag(
+                data_path=dataset_dir,
+                output_path=dataset_result_dir,
+                shape=test_data.shape,
+            )
 
             # Run DAG-GNN
-            run_dag_gnn(data_path=dataset_dir, output_path=dataset_result_dir, shape = test_data.shape)
+            run_dag_gnn(
+                data_path=dataset_dir,
+                output_path=dataset_result_dir,
+                shape=test_data.shape,
+            )
 
 
 if __name__ == "__main__":
