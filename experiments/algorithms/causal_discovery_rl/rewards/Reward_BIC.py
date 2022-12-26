@@ -124,8 +124,10 @@ class get_Reward(object):
             )
 
         RSS_ls = []
-
+        print("self.maxlen")
+        print(self.maxlen)
         for i in range(self.maxlen):
+            print(i)
             col = graph_batch[i]
             if graph_to_int[i] in self.d_RSS:
                 RSS_ls.append(self.d_RSS[graph_to_int[i]])
@@ -138,6 +140,11 @@ class get_Reward(object):
 
             else:
                 cols_TrueFalse = col > 0.5
+                print("self.inputdata")
+                print(self.inputdata.shape)
+                print("cols_TrueFalse")
+                print(cols_TrueFalse)
+                print(i)
                 X_train = self.inputdata[:, cols_TrueFalse]
                 y_train = self.inputdata[:, i]
                 print("X_train.shape")
