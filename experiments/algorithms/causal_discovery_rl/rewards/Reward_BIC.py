@@ -77,14 +77,10 @@ class get_Reward(object):
         X = np.hstack((X_train, self.ones))
         XtX = X.T.dot(X)
         Xty = X.T.dot(y_train)
-        print("XtX")
-        print(XtX)
-        print("Xty")
-        print(Xty)
-        # try:
-        #     theta = np.linalg.solve(XtX, Xty)
-        # except:
-        #     theta = np.linalg.lstsq(XtX, Xty)
+        try:
+            theta = np.linalg.solve(XtX, Xty)
+        except:
+            theta = np.linalg.lstsq(XtX, Xty)
         theta = np.linalg.solve(XtX, Xty)
         y_err = X.dot(theta) - y_train
         return y_err
