@@ -8,20 +8,22 @@ from sklearn.preprocessing import StandardScaler
 
 
 class DataGenerator(object):
-
-
-    def __init__(self, file_path, solution_path=None, normalize_flag=False, transpose_flag=False):
+    def __init__(
+        self, file_path, solution_path=None, normalize_flag=False, transpose_flag=False
+    ):
 
         self.inputdata = np.load(file_path)
         self.datasize, self.d = self.inputdata.shape
-
+        print("self.inputdata")
+        print(self.inputdata)
+        print(self.inputdata.shape)
         if normalize_flag:
             self.inputdata = StandardScaler().fit_transform(self.inputdata)
         if not solution_path:
             self.true_graph = None
         else:
             gtrue = np.load(solution_path)
-            if transpose_flag: 
+            if transpose_flag:
                 gtrue = np.transpose(gtrue)
             # (i,j)=1 => node i -> node j
             self.true_graph = np.int32(np.abs(gtrue) > 1e-3)
@@ -36,7 +38,7 @@ class DataGenerator(object):
         input_batch = []
 
         for _ in range(batch_size):
-            input_= self.gen_instance_graph(max_length, dimension)
+            input_ = self.gen_instance_graph(max_length, dimension)
             input_batch.append(input_)
 
         return input_batch

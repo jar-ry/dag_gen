@@ -75,12 +75,18 @@ class get_Reward(object):
     # faster than LinearRegression() from sklearn
     def calculate_LR(self, X_train, y_train):
         X = np.hstack((X_train, self.ones))
+        print("X")
+        print(X)
         XtX = X.T.dot(X)
         Xty = X.T.dot(y_train)
         try:
             theta = np.linalg.solve(XtX, Xty)
         except:
             theta = np.linalg.lstsq(XtX, Xty)
+        print("theta")
+        print(theta)
+        print("y_train")
+        print(y_train)
         y_err = X.dot(theta) - y_train
         return y_err
 
