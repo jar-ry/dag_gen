@@ -134,6 +134,10 @@ class get_Reward(object):
                 cols_TrueFalse = col > 0.5
                 X_train = self.inputdata[:, cols_TrueFalse]
                 y_train = self.inputdata[:, i]
+                print("X_train.shape")
+                print(X_train.shape)
+                print("y_train.shape")
+                print(y_train.shape)
                 y_err = self.calculate_yerr(X_train, y_train)
 
             RSSi = np.sum(np.square(y_err))
