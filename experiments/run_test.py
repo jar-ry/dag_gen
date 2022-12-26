@@ -109,6 +109,7 @@ def run_rl_bic(data_path: str, output_path: str, shape: tuple):
             "data_size": shape[0],
             "lambda_flag_default": True,
             "nb_epoch": 2000,
+            "reg_type": "GPR",
         }
     )
     with open(os.path.join(rl_bic_result_dir, "completed.txt"), "w") as f:

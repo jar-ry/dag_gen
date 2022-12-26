@@ -14,9 +14,7 @@ class DataGenerator(object):
 
         self.inputdata = np.load(file_path)
         self.datasize, self.d = self.inputdata.shape
-        print("self.inputdata")
-        print(self.inputdata)
-        print(self.inputdata.shape)
+
         if normalize_flag:
             self.inputdata = StandardScaler().fit_transform(self.inputdata)
         if not solution_path:
