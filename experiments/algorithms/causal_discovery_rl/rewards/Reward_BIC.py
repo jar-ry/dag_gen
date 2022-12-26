@@ -81,7 +81,6 @@ class get_Reward(object):
             theta = np.linalg.solve(XtX, Xty)
         except:
             theta = np.linalg.lstsq(XtX, Xty)
-        theta = np.linalg.solve(XtX, Xty)
         y_err = X.dot(theta) - y_train
         return y_err
 
