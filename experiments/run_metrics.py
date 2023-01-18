@@ -92,14 +92,28 @@ def run_metrics():
             algo_result_dirs = next(os.walk(dataset_result_dir))[1]
             for algo_result_dir in algo_result_dirs:
                 result_dir = os.path.join(dataset_result_dir, algo_result_dir)
-                result_path = os.path.join(result_dir, "result.npy")
-                metric_path = os.path.join(result_dir, "metric.txt")
-                timing_path = os.path.join(result_dir, "timing.txt")
+                if algo_result_dir == "gran_dag":
+                    result_path = os.path.join(result_dir, "to-dag/DAG.npy")
+                    metric_path = os.path.join(result_dir, "to-dag/metric.txt")
+                    timing_path = os.path.join(result_dir, "to-dag/timing.txt")
+                elif algo_result_dir == "dag_gnn":
+                    result_path = os.path.join(result_dir, "DAG.npy")
+                    metric_path = os.path.join(result_dir, "metric.txt")
+                    timing_path = os.path.join(result_dir, "timing.txt")
+                elif algo_result_dir == "rl_bic":
+                    result_path = os.path.join(result_dir, "solvd_graph_batch_pruned.npy")
+                    metric_path = os.path.join(result_dir, "metric.txt")
+                    timing_path = os.path.join(result_dir, "timing.txt")
+                else:
+                    result_path = os.path.join(result_dir, "result.npy")
+                    metric_path = os.path.join(result_dir, "metric.txt")
+                    timing_path = os.path.join(result_dir, "timing.txt")
 
                 # Create result dir
                 true_dag = load(true_dag_path)
                 pred_dag = load(result_path)
-
+                if algo_result_dir == "sam":
+                    pred_dag = np.where(pred_dag>0.5, 1, 0)
                 # Compute SHD
                 metrics = compute_metrics(true_dag, pred_dag)
                 # Read compute time

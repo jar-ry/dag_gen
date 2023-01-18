@@ -58,7 +58,7 @@
             "parents_max": 3,
             "confounders": 0,
             "num_unfaithful_nodes": 0,
-            "random_seed": 42
+            "random_seed": 43
         },
         "medium_no_issue_no_noise_2": {
             "causal_mechanism": "mix",
@@ -70,7 +70,7 @@
             "parents_max": 3,
             "confounders": 0,
             "num_unfaithful_nodes": 0,
-            "random_seed": 42
+            "random_seed": 43
         },
         "medium_all_3": {
             "causal_mechanism": "mix",
@@ -94,7 +94,7 @@
             "parents_max": 3,
             "confounders": 0,
             "num_unfaithful_nodes": 0,
-            "random_seed": 42
+            "random_seed": 44
         },
         "medium_no_issue_no_noise_3": {
             "causal_mechanism": "mix",
@@ -106,7 +106,7 @@
             "parents_max": 3,
             "confounders": 0,
             "num_unfaithful_nodes": 0,
-            "random_seed": 42
+            "random_seed": 44
         }
     }
 }

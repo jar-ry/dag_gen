@@ -1,0 +1,6 @@
+{
+    "node_1": "gp_mix",
+    "node_2": "linear",
+    "node_3": "linear",
+    "node_4": "gp_mix"
+}
