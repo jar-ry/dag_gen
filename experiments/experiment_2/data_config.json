@@ -8,8 +8,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 42
         },
         "medium_unfaithful_1": {
@@ -17,8 +17,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 42
         },
@@ -27,8 +27,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 42
         },
@@ -40,8 +40,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 43
         },
         "medium_unfaithful_2": {
@@ -49,8 +49,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 43
         },
@@ -59,8 +59,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 43
         },
@@ -72,8 +72,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 44
         },
         "medium_unfaithful_3": {
@@ -81,8 +81,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 44
         },
@@ -91,8 +91,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 44
         }
@@ -106,8 +106,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 42
         },
         "medium_unfaithful_1": {
@@ -115,8 +115,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 42
         },
@@ -125,8 +125,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 42
         },
@@ -138,8 +138,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 43
         },
         "medium_unfaithful_2": {
@@ -147,8 +147,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 43
         },
@@ -157,8 +157,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 43
         },
@@ -170,8 +170,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 44
         },
         "medium_unfaithful_3": {
@@ -179,8 +179,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 44
         },
@@ -189,8 +189,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 44
         }
@@ -204,8 +204,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 42
         },
         "medium_unfaithful_1": {
@@ -213,8 +213,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 42
         },
@@ -223,8 +223,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 42
         },
@@ -236,8 +236,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 43
         },
         "medium_unfaithful_2": {
@@ -245,8 +245,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 43
         },
@@ -255,8 +255,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 43
         },
@@ -268,8 +268,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 44
         },
         "medium_unfaithful_3": {
@@ -277,8 +277,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 44
         },
@@ -287,8 +287,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 44
         }
@@ -302,8 +302,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 42
         },
         "medium_unfaithful_1": {
@@ -311,8 +311,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 42
         },
@@ -321,8 +321,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 42
         },
@@ -334,8 +334,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 43
         },
         "medium_unfaithful_2": {
@@ -343,8 +343,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 43
         },
@@ -353,8 +353,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 43
         },
@@ -366,8 +366,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 44
         },
         "medium_unfaithful_3": {
@@ -375,8 +375,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 44
         },
@@ -385,8 +385,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 44
         }
@@ -400,8 +400,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 42
         },
         "medium_unfaithful_1": {
@@ -409,8 +409,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 42
         },
@@ -419,8 +419,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 42
         },
@@ -432,8 +432,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 43
         },
         "medium_unfaithful_2": {
@@ -441,8 +441,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 43
         },
@@ -451,8 +451,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 43
         },
@@ -464,8 +464,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 44
         },
         "medium_unfaithful_3": {
@@ -473,8 +473,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 44
         },
@@ -483,8 +483,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 44
         }
@@ -498,8 +498,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 42
         },
         "medium_unfaithful_1": {
@@ -507,8 +507,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 42
         },
@@ -517,8 +517,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 42
         },
@@ -530,8 +530,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 43
         },
         "medium_unfaithful_2": {
@@ -539,8 +539,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 43
         },
@@ -549,8 +549,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 43
         },
@@ -562,8 +562,8 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "random_seed": 44
         },
         "medium_unfaithful_3": {
@@ -571,8 +571,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "num_unfaithful_nodes": 1,
             "random_seed": 44
         },
@@ -581,8 +581,8 @@
             "noise": "gaussian",
             "noise_coeff": 0.4,
             "npoints": 5000,
-            "nodes": 12,
-            "parents_max": 5,
+            "nodes": 10,
+            "parents_max": 3,
             "confounders": 1,
             "random_seed": 44
         }
