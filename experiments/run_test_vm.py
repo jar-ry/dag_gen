@@ -268,4 +268,4 @@ if __name__ == "__main__":
     test_name = sys.argv[1]
     mech_name = sys.argv[2]
     algo_name = sys.argv[3]
-    run_test(test_name, algo_name)
+    run_test(test_name, mech_name, algo_name)
