@@ -7,7 +7,5 @@
     "node_6": "sigmoid_add",
     "node_7": "sigmoid_add",
     "node_8": "sigmoid_add",
-    "node_9": "sigmoid_add",
-    "node_10": "sigmoid_add",
-    "node_11": "sigmoid_add"
+    "node_9": "sigmoid_add"
 }

@@ -7,7 +7,5 @@
     "node_6": "sigmoid_mix",
     "node_7": "sigmoid_mix",
     "node_8": "sigmoid_mix",
-    "node_9": "sigmoid_mix",
-    "node_10": "sigmoid_mix",
-    "node_11": "sigmoid_mix"
+    "node_9": "sigmoid_mix"
 }

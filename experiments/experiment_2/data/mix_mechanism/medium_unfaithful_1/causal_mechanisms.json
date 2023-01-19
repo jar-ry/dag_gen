@@ -6,7 +6,5 @@
     "node_5": "sigmoid_add",
     "node_6": "polynomial",
     "node_7": "polynomial",
-    "node_8": "polynomial",
-    "node_9": "gp_mix",
-    "node_10": "linear"
+    "node_8": "polynomial"
 }

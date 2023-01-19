@@ -8,7 +8,5 @@
     "node_7": "sigmoid_add",
     "node_8": "gp_mix",
     "node_9": "gp_mix",
-    "node_10": "nn",
-    "node_11": "linear",
-    "node_12": "sigmoid_mix"
+    "node_10": "nn"
 }

@@ -8,7 +8,5 @@
     "node_7": "polynomial",
     "node_8": "sigmoid_mix",
     "node_9": "polynomial",
-    "node_10": "sigmoid_add",
-    "node_11": "linear",
-    "node_12": "polynomial"
+    "node_10": "sigmoid_add"
 }
