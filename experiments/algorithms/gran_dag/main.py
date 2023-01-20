@@ -130,5 +130,5 @@ def run_gran_dag(config):
                         help="Use GPU")
     parser.add_argument('--float', action="store_true",
                         help="Use Float precision")
-
-    main(parser.parse_args())
+    args, unknown = parser.parse_known_args()
+    main(args)

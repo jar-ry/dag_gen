@@ -362,6 +362,6 @@ def run_dag_gnn(config):
     )
     parser.add_argument("--cam-pruning", action="store_true")
 
-    opt = parser.parse_args()
+    opt, unknown = parser.parse_known_args()
 
     main(opt)
