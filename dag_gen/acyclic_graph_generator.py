@@ -108,7 +108,7 @@ class AcyclicGraphGenerator(object):
         npoints=500,
         nodes=20,
         parents_max=5,
-        expected_degree=1,
+        expected_degree=2,
         confounders=0,
         num_unfaithful_nodes=0,
         random_seed=42,
