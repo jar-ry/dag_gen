@@ -195,12 +195,32 @@ def run_test(test_name, mech_name, algo_name):
                     gran_dag_result_dir = os.path.join(dataset_result_dir, "gran_dag")
                     rl_bic_result_dir = os.path.join(dataset_result_dir, "rl_bic")
                     sam_result_dir = os.path.join(dataset_result_dir, "sam")
+                    cam_result_dir = os.path.join(dataset_result_dir, "cam")
+                    notear_result_dir = os.path.join(dataset_result_dir, "notear")
 
                     # # Run NoTears
                     # run_notears(data=test_data, output_path=dataset_result_dir)
 
                     # # Run CAM (https://arxiv.org/abs/1310.1533)
                     # run_cam(data=test_data, output_path=dataset_result_dir)
+                    if algo_name == "NOTEARS":
+                        if not os.path.isdir(notear_result_dir):
+                            # Run NoTears
+                            run_notears(data=test_data, output_path=dataset_result_dir)
+                        else:
+                            if len(os.listdir(notear_result_dir)) == 0:
+                                # Run NoTears
+                                run_notears(data=test_data, output_path=dataset_result_dir)
+                    
+                    if algo_name == "CAM":
+                        if not os.path.isdir(cam_result_dir):
+                            # Run CAM (https://arxiv.org/abs/1310.1533)
+                            run_cam(data=test_data, output_path=dataset_result_dir)
+                        else:
+                            if len(os.listdir(cam_result_dir)) == 0:
+                                # Run CAM (https://arxiv.org/abs/1310.1533)
+                                run_cam(data=test_data, output_path=dataset_result_dir)
+                            
                     if algo_name == "SAM":
                         if not os.path.isdir(sam_result_dir):
                             # Run SAM (https://arxiv.org/abs/1803.04929v5)
