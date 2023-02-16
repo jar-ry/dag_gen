@@ -189,68 +189,80 @@ def run_test():
             gran_dag_result_dir = os.path.join(dataset_result_dir, "gran_dag")
             rl_bic_result_dir = os.path.join(dataset_result_dir, "rl_bic")
             sam_result_dir = os.path.join(dataset_result_dir, "sam")
+            cam_result_dir = os.path.join(dataset_result_dir, "cam")
+            notear_result_dir = os.path.join(dataset_result_dir, "notear")
 
-            # # Run NoTears
-            # run_notears(data=test_data, output_path=dataset_result_dir)
-
-            # # Run CAM (https://arxiv.org/abs/1310.1533)
-            # run_cam(data=test_data, output_path=dataset_result_dir)
-
-            if not os.path.isdir(sam_result_dir):
-                # Run SAM (https://arxiv.org/abs/1803.04929v5)
-                run_sam(data=test_data, output_path=dataset_result_dir)
+            if not os.path.isdir(notear_result_dir):
+                # Run NoTears
+                run_notears(data=test_data, output_path=dataset_result_dir)
             else:
-                if len(os.listdir(sam_result_dir)) == 0:
-                    # Run SAM (https://arxiv.org/abs/1803.04929v5)
-                    run_sam(data=test_data, output_path=dataset_result_dir)
-
-            if not os.path.isdir(rl_bic_result_dir):
-                # Run RL-BIC
-                run_rl_bic(
-                    data_path=dataset_dir,
-                    output_path=dataset_result_dir,
-                    shape=test_data.shape,
-                )
+                if len(os.listdir(notear_result_dir)) == 0:
+                    # Run NoTears
+                    run_notears(data=test_data, output_path=dataset_result_dir)
+            
+            if not os.path.isdir(cam_result_dir):
+                # Run CAM (https://arxiv.org/abs/1310.1533)
+                run_cam(data=test_data, output_path=dataset_result_dir)
             else:
-                if len(os.listdir(rl_bic_result_dir)) == 0:
-                    # Run RL-BIC
-                    run_rl_bic(
-                        data_path=dataset_dir,
-                        output_path=dataset_result_dir,
-                        shape=test_data.shape,
-                    )
+                if len(os.listdir(cam_result_dir)) == 0:
+                    # Run CAM (https://arxiv.org/abs/1310.1533)
+                    run_cam(data=test_data, output_path=dataset_result_dir)
 
-            if not os.path.isdir(gran_dag_result_dir):
-                # Run Gran Dag
-                run_gran_dag(
-                    data_path=dataset_dir,
-                    output_path=dataset_result_dir,
-                    shape=test_data.shape,
-                )
-            else:
-                if len(os.listdir(gran_dag_result_dir)) == 0:
-                    # Run Gran Dag
-                    run_gran_dag(
-                        data_path=dataset_dir,
-                        output_path=dataset_result_dir,
-                        shape=test_data.shape,
-                    )
+            # if not os.path.isdir(sam_result_dir):
+            #     # Run SAM (https://arxiv.org/abs/1803.04929v5)
+            #     run_sam(data=test_data, output_path=dataset_result_dir)
+            # else:
+            #     if len(os.listdir(sam_result_dir)) == 0:
+            #         # Run SAM (https://arxiv.org/abs/1803.04929v5)
+            #         run_sam(data=test_data, output_path=dataset_result_dir)
 
-            if not os.path.isdir(dag_gnn_result_dir):
-                # Run DAG-GNN
-                run_dag_gnn(
-                    data_path=dataset_dir,
-                    output_path=dataset_result_dir,
-                    shape=test_data.shape,
-                )
-            else:
-                if len(os.listdir(dag_gnn_result_dir)) == 0:
-                    # Run DAG-GNN
-                    run_dag_gnn(
-                        data_path=dataset_dir,
-                        output_path=dataset_result_dir,
-                        shape=test_data.shape,
-                    )
+            # if not os.path.isdir(rl_bic_result_dir):
+            #     # Run RL-BIC
+            #     run_rl_bic(
+            #         data_path=dataset_dir,
+            #         output_path=dataset_result_dir,
+            #         shape=test_data.shape,
+            #     )
+            # else:
+            #     if len(os.listdir(rl_bic_result_dir)) == 0:
+            #         # Run RL-BIC
+            #         run_rl_bic(
+            #             data_path=dataset_dir,
+            #             output_path=dataset_result_dir,
+            #             shape=test_data.shape,
+            #         )
+
+            # if not os.path.isdir(gran_dag_result_dir):
+            #     # Run Gran Dag
+            #     run_gran_dag(
+            #         data_path=dataset_dir,
+            #         output_path=dataset_result_dir,
+            #         shape=test_data.shape,
+            #     )
+            # else:
+            #     if len(os.listdir(gran_dag_result_dir)) == 0:
+            #         # Run Gran Dag
+            #         run_gran_dag(
+            #             data_path=dataset_dir,
+            #             output_path=dataset_result_dir,
+            #             shape=test_data.shape,
+            #         )
+
+            # if not os.path.isdir(dag_gnn_result_dir):
+            #     # Run DAG-GNN
+            #     run_dag_gnn(
+            #         data_path=dataset_dir,
+            #         output_path=dataset_result_dir,
+            #         shape=test_data.shape,
+            #     )
+            # else:
+            #     if len(os.listdir(dag_gnn_result_dir)) == 0:
+            #         # Run DAG-GNN
+            #         run_dag_gnn(
+            #             data_path=dataset_dir,
+            #             output_path=dataset_result_dir,
+            #             shape=test_data.shape,
+            #         )
 
 
 if __name__ == "__main__":
