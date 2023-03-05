@@ -325,17 +325,16 @@ def main(config_override):
 
                 graph_batch = convert_graph_int_to_adj_mat(graph_int)
 
-                # if reg_type == 'LR':
-                graph_batch_pruned = np.array(
-                    graph_prunned_by_coef(graph_batch, training_set.inputdata)
-                )
-                # elif reg_type == 'QR':
-                #     graph_batch_pruned = np.array(graph_prunned_by_coef_2nd(graph_batch, training_set.inputdata))
-                # elif reg_type == 'GPR':
-                #     # The R codes of CAM pruning operates the graph form that (i,j)=1 indicates i-th node-> j-th node
-                #     # so we need to do a tranpose on the input graph and another tranpose on the output graph
-                # TODO uncomment for AWS run
-                # graph_batch_pruned = np.transpose(pruning_cam(training_set.inputdata, np.array(graph_batch).T))
+                if reg_type == 'LR':
+                    graph_batch_pruned = np.array(
+                        graph_prunned_by_coef(graph_batch, training_set.inputdata)
+                    )
+                elif reg_type == 'QR':
+                    graph_batch_pruned = np.array(graph_prunned_by_coef_2nd(graph_batch, training_set.inputdata))
+                elif reg_type == 'GPR':
+                    # The R codes of CAM pruning operates the graph form that (i,j)=1 indicates i-th node-> j-th node
+                    # so we need to do a tranpose on the input graph and another tranpose on the output graph
+                    graph_batch_pruned = np.transpose(pruning_cam(training_set.inputdata, np.array(graph_batch).T))
                 np.save(
                     "{}/solvd_graph_batch.npy".format(config.graph_dir), graph_batch
                 )
