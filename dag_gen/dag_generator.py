@@ -102,7 +102,8 @@ class DAG_Generator:
                             print("parent : ", parent)
                             self.number_nodes_with_two_or_more_parents += 1
                             self.adjacency_matrix[parent, node] = 1
-                            break
+                            if self.number_nodes_with_two_or_more_parents == self.confounders:
+                                break
             
                 # If no parent can be removed for any node with two or more parents, discard the adjacency matrix and generate a new one
                 if np.where(np.sum(self.adjacency_matrix, axis=0) >= 2)[0] < self.confounders:
