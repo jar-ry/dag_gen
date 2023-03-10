@@ -361,6 +361,8 @@ class AcyclicGraphGenerator(object):
                 if self.confounders:
                     self.confounder_data.drop(drop_indices, inplace=True)
 
+        print('len(self.data)')
+        print(len(self.data))
         # Generate unfaithful node to cancel cause
         if self.num_unfaithful_nodes:
             for i in self.unfaithful_nodes:

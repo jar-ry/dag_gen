@@ -20,7 +20,7 @@
             "noise_coeff": 0.4,
             "selection_bias_nodes": 0,
             "npoints": 1000,
-            "nodes": 20,
+            "nodes": 15,
             "parents_max": 5,
             "confounders": 0,
             "num_unfaithful_nodes": 0,
