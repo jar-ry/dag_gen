@@ -290,8 +290,8 @@ class AcyclicGraphGenerator(object):
                 raise Regenerate_Dag(
                     self.random_seed, f"No confounders found with at least two parents. Current random seed: {self.random_seed}"
                 )
-            confounder_deleted = 0
-            while confounder_deleted != self.confounders:
+
+            while len(self.deleted_nodes) != self.confounders:
                 multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
                 print("multi_parent_nodes")
                 print(multi_parent_nodes)
@@ -304,6 +304,7 @@ class AcyclicGraphGenerator(object):
                 # Check if removing one of the parents will disconnect the graph
                 print("parents")
                 print(parents)
+                random.shuffle(parents)
                 for parent_to_remove in parents:
                     remaining_nodes = [
                         n for n in self.g.nodes if n not in self.deleted_nodes + [parent_to_remove]
@@ -311,12 +312,13 @@ class AcyclicGraphGenerator(object):
                     subgraph = self.g.subgraph(remaining_nodes)
                     if nx.is_weakly_connected(subgraph):
                         # Remove one of the parents instead of the random node
+                        print(self.g)
                         self.g.remove_edge(parent_to_remove, random_node)
+                        print(self.g)
                         self.adjacency_matrix[parent_to_remove, random_node] = 0
                         self.data.drop(
                             self.data.columns[parent_to_remove], axis=1, inplace=True
                         )
-                        confounder_deleted += 1
                         self.deleted_nodes.append(parent_to_remove)
                         break
             if len(self.deleted_nodes) < self.confounders:
