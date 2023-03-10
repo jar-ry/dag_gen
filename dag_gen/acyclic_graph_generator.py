@@ -292,6 +292,7 @@ class AcyclicGraphGenerator(object):
                 )
             confounder_deleted = 0
             while confounder_deleted != self.confounders:
+                multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
                 print("multi_parent_nodes")
                 print(multi_parent_nodes)
                 random.shuffle(multi_parent_nodes)
