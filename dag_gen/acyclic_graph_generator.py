@@ -312,18 +312,21 @@ class AcyclicGraphGenerator(object):
                     if nx.is_weakly_connected(subgraph):
                         print("parent_to_remove")
                         print(parent_to_remove)
-                        print('self.adjacency_matrix')
-                        print(self.adjacency_matrix)
+                        print('self.data.columns 0')
+                        print(self.data.columns)
                         self.g.remove_node(parent_to_remove)
                         # Load the adjacency matrix again from the updated graph
                         self.adjacency_matrix = nx.to_numpy_array(self.g)
-                        # self.adjacency_matrix[parent_to_remove, :] = 0
-                        # self.adjacency_matrix[:, parent_to_remove] = 0
-                        print('self.adjacency_matrix')
-                        print(self.adjacency_matrix)
+
+                        if list(self.data.columns) != list(self.g.nodes):
+                            self.data = self.data.reindex(self.g.nodes, axis=1)
+                        print('self.data.columns 1')
+                        print(self.data.columns)
                         self.data.drop(
                             self.data.columns[parent_to_remove], axis=1, inplace=True
                         )
+                        print('self.data.columns 1.5')
+                        print(self.data.columns)
                         self.deleted_nodes.append(parent_to_remove)
                         break
                 loop_counter += 1
