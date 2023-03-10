@@ -1,6 +1,6 @@
 {
     "linear_mechanism": {
-        "small_linear_selection_bias_1": {
+        "dense_small_linear_selection_bias_1": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -13,7 +13,7 @@
             "random_seed": 42,
             "dag_type": "default"
         },
-        "small_linear_selection_bias_2": {
+        "dense_small_linear_selection_bias_2": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -26,7 +26,7 @@
             "random_seed": 43,
             "dag_type": "default"
         },
-        "small_linear_selection_bias_3": {
+        "dense_small_linear_selection_bias_3": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -39,7 +39,7 @@
             "random_seed": 44,
             "dag_type": "default"
         },
-        "med_linear_selection_bias_1": {
+        "dense_med_linear_selection_bias_1": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -52,7 +52,7 @@
             "random_seed": 42,
             "dag_type": "default"
         },
-        "med_linear_selection_bias_2": {
+        "dense_med_linear_selection_bias_2": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -65,7 +65,7 @@
             "random_seed": 43,
             "dag_type": "default"
         },
-        "med_linear_selection_bias_3": {
+        "dense_med_linear_selection_bias_3": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -78,7 +78,7 @@
             "random_seed": 44,
             "dag_type": "default"
         },
-        "large_linear_selection_bias_1": {
+        "dense_large_linear_selection_bias_1": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -91,7 +91,7 @@
             "random_seed": 42,
             "dag_type": "default"
         },
-        "large_linear_selection_bias_2": {
+        "dense_large_linear_selection_bias_2": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -104,7 +104,7 @@
             "random_seed": 43,
             "dag_type": "default"
         },
-        "large_linear_selection_bias_3": {
+        "dense_large_linear_selection_bias_3": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -117,7 +117,7 @@
             "random_seed": 44,
             "dag_type": "default"
         },
-        "x_large_linear_selection_bias_1": {
+        "dense_x_large_linear_selection_bias_1": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -130,7 +130,7 @@
             "random_seed": 42,
             "dag_type": "default"
         },
-        "x_large_linear_selection_bias_2": {
+        "dense_x_large_linear_selection_bias_2": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -143,7 +143,7 @@
             "random_seed": 43,
             "dag_type": "default"
         },
-        "x_large_linear_selection_bias_3": {
+        "dense_x_large_linear_selection_bias_3": {
             "causal_mechanism": "linear",
             "noise": "gaussian",
             "noise_coeff": 0.3,
