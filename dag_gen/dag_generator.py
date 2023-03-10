@@ -85,16 +85,17 @@ class DAG_Generator:
                 self.number_nodes_with_two_or_more_parents = len(nodes_with_two_or_more_parents)
 
                 while self.number_nodes_with_two_or_more_parents < self.confounders:
+                    print("number_nodes_with_two_or_more_parents less than confounders")
                     nodes_with_one_parent = np.where(np.sum(self.adjacency_matrix, axis=0) == 1)[0]
                     if len(nodes_with_one_parent) == 0:
                         self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
-                        continue
+                        break
                     node = np.random.choice(nodes_with_one_parent)
                     parents = np.where(self.adjacency_matrix[:, node] == 1)[0]
                     candidates = [i for i in range(0, self.nodes) if self.adjacency_matrix[i, node] == 0 and i not in parents]
                     if len(candidates) == 0:
                         self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
-                        continue
+                        break
                     new_parent = np.random.choice(candidates)
                     for parent in candidates:
                         if nx.is_weakly_connected(G.subgraph(set(G.nodes)-set([parent]))):
@@ -103,7 +104,7 @@ class DAG_Generator:
                             self.adjacency_matrix[new_parent, node] = 1
                             break
                     self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
-                    continue
+                    break
             
                 # If no parent can be removed for any node with two or more parents, discard the adjacency matrix and generate a new one
                 if self.number_nodes_with_two_or_more_parents < self.confounders:
