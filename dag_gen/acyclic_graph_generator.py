@@ -297,8 +297,12 @@ class AcyclicGraphGenerator(object):
                 random.shuffle(multi_parent_nodes)
                 random_node = multi_parent_nodes.pop()
                 # Get parents of the random node
+                print("random_node")
+                print(random_node)
                 parents = list(self.g.predecessors(random_node))
                 # Check if removing one of the parents will disconnect the graph
+                print("parents")
+                print(parents)
                 for parent_to_remove in parents:
                     remaining_nodes = [
                         n for n in self.g.nodes if n not in self.deleted_nodes + [parent_to_remove]

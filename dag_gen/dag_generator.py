@@ -96,8 +96,6 @@ class DAG_Generator:
                         self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
                     for parent in candidates:
                         if nx.is_weakly_connected(G.subgraph(set(G.nodes)-set([parent]))):
-                            print("node : ", node)
-                            print("parent : ", parent)
                             self.number_nodes_with_two_or_more_parents += 1
                             self.adjacency_matrix[parent, node] = 1
                             if self.number_nodes_with_two_or_more_parents == self.confounders:
