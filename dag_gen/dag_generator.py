@@ -72,7 +72,7 @@ class DAG_Generator:
                     self.adjacency_matrix[node, random_neighbor] = 1
 
             # Ensure at least one node has two parents when parents_max is 1
-            if self.parents_max < 2 and self.confounders:
+            if self.confounders:
                 # Find a parent to remove for each node with two or more parents
                 nodes_with_two_or_more_parents = np.where(np.sum(self.adjacency_matrix, axis=0) >= 2)[0]
                 self.number_nodes_with_two_or_more_parents = len(nodes_with_two_or_more_parents)
