@@ -294,7 +294,8 @@ class AcyclicGraphGenerator(object):
             while len(self.deleted_nodes) != self.confounders and loop_counter <= loop_max:
                 print(f"loop_counter: {loop_counter}, max_loop: {loop_max}")
                 multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
-
+                print("multi_parent_nodes")
+                print(multi_parent_nodes)
                 random.shuffle(multi_parent_nodes)
                 random_node = multi_parent_nodes.pop()
                 # Get parents of the random node
@@ -309,6 +310,8 @@ class AcyclicGraphGenerator(object):
                     ]
                     subgraph = self.g.subgraph(remaining_nodes)
                     if nx.is_weakly_connected(subgraph):
+                        print("parent_to_remove")
+                        print(parent_to_remove)
                         self.g.remove_node(parent_to_remove)
                         self.adjacency_matrix[parent_to_remove, :] = 0
                         self.adjacency_matrix[:, parent_to_remove] = 0
