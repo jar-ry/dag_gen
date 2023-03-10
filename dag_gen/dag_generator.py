@@ -103,8 +103,14 @@ class DAG_Generator:
                             if self.number_nodes_with_two_or_more_parents == self.confounders:
                                 break
 
+                nodes_with_two_or_more_parents = np.where(np.sum(self.adjacency_matrix, axis=0) >= 2)[0]
+                final_check_list = []
+                for parent in nodes_with_two_or_more_parents:
+                    if nx.is_weakly_connected(G.subgraph(set(G.nodes)-set([parent]))):
+                        final_check_list.append(parent)
+
                 # If no parent can be removed for any node with two or more parents, discard the adjacency matrix and generate a new one
-                if len(np.where(np.sum(self.adjacency_matrix, axis=0) >= 2)[0]) < self.confounders:
+                if len(final_check_list) < self.confounders:
                     self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
                     print("HERE4")
                     continue
