@@ -318,12 +318,10 @@ class AcyclicGraphGenerator(object):
                         # Load the adjacency matrix again from the updated graph
                         self.adjacency_matrix = nx.to_numpy_array(self.g)
 
-                        if list(self.data.columns) != list(self.g.nodes):
-                            self.data = self.data.reindex(self.g.nodes, axis=1)
                         print('self.data.columns 1')
                         print(self.data.columns)
                         self.data.drop(
-                            self.data.columns[parent_to_remove], axis=1, inplace=True
+                            columns=[f"V{parent_to_remove}"]
                         )
                         print('self.data.columns 1.5')
                         print(self.data.columns)
