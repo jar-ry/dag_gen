@@ -88,7 +88,7 @@
             "npoints": 3000,
             "nodes": 50,
             "parents_max": 2,
-            "random_seed": 42,
+            "random_seed": 41,
             "dag_type": "default"
         },
         "dense_large_mixed_selection_bias_2": {

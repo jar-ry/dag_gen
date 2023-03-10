@@ -102,7 +102,7 @@
             "parents_max": 2,
             "confounders": 5,
             "num_unfaithful_nodes": 5,
-            "random_seed": 42,
+            "random_seed": 40,
             "dag_type": "default"
         },
         "dense_large_mixed_all_issues_2": {
