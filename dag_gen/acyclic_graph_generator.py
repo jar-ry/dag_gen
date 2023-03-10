@@ -153,7 +153,7 @@ class AcyclicGraphGenerator(object):
                     - (selection_bias_range[0] * npoints)
                 )
             )
-            npoints = npoints + self.n_to_remove
+            npoints = npoints + (self.n_to_remove * selection_bias_nodes)
         else:
             npoints = npoints
         self.npoints = int(npoints)
