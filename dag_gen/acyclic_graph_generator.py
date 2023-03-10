@@ -337,7 +337,7 @@ class AcyclicGraphGenerator(object):
             for i in biased_nodes:
                 print("self.data")
                 print(self.data)
-                target_series = self.data[f"V{i}"].copy()
+                target_series = self.data[f"V{i-1}"].copy()
                 target_range = target_series[
                     (
                         target_series.index
