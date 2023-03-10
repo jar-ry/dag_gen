@@ -75,6 +75,13 @@ class DAG_Generator:
             if self.confounders:
                 # Find a parent to remove for each node with two or more parents
                 nodes_with_two_or_more_parents = np.where(np.sum(self.adjacency_matrix, axis=0) >= 2)[0]
+
+                new_nodes_with_two_or_more_parents = []
+                for parent in nodes_with_two_or_more_parents:
+                    if nx.is_weakly_connected(G.subgraph(set(G.nodes)-set([parent]))):
+                        new_nodes_with_two_or_more_parents.append(parent)
+                nodes_with_two_or_more_parents = new_nodes_with_two_or_more_parents
+                
                 self.number_nodes_with_two_or_more_parents = len(nodes_with_two_or_more_parents)
 
                 while self.number_nodes_with_two_or_more_parents < self.confounders:
