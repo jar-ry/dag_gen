@@ -12,7 +12,7 @@
             "parents_max": 1,
             "confounders": 1,
             "num_unfaithful_nodes": 1,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "small_linear_all_issues_2": {
@@ -57,7 +57,7 @@
             "parents_max": 1,
             "confounders": 2,
             "num_unfaithful_nodes": 2,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "med_linear_all_issues_2": {
@@ -102,7 +102,7 @@
             "parents_max": 1,
             "confounders": 5,
             "num_unfaithful_nodes": 5,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "large_linear_all_issues_2": {
@@ -147,7 +147,7 @@
             "parents_max": 1,
             "confounders": 10,
             "num_unfaithful_nodes": 10,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "x_large_linear_all_issues_2": {

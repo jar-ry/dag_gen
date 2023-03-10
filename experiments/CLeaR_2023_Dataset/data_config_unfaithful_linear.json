@@ -8,7 +8,7 @@
             "nodes": 10,
             "parents_max": 1,
             "num_unfaithful_nodes": 1,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "small_linear_unfaithful_2": {
@@ -41,7 +41,7 @@
             "nodes": 20,
             "parents_max": 1,
             "num_unfaithful_nodes": 2,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "med_linear_unfaithful_2": {
@@ -74,7 +74,7 @@
             "nodes": 50,
             "parents_max": 1,
             "num_unfaithful_nodes": 5,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "large_linear_unfaithful_2": {
@@ -107,7 +107,7 @@
             "nodes": 100,
             "parents_max": 1,
             "num_unfaithful_nodes": 10,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "x_large_linear_unfaithful_2": {

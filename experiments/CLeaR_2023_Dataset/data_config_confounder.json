@@ -8,7 +8,7 @@
             "nodes": 10,
             "parents_max": 1,
             "confounders": 1,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "small_mixed_confounder_2": {
@@ -41,7 +41,7 @@
             "nodes": 20,
             "parents_max": 1,
             "confounders": 2,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "med_mixed_confounder_2": {
@@ -74,7 +74,7 @@
             "nodes": 50,
             "parents_max": 1,
             "confounders": 5,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "large_mixed_confounder_2": {

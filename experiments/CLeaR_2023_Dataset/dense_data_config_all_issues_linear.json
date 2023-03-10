@@ -12,7 +12,7 @@
             "parents_max": 2,
             "confounders": 1,
             "num_unfaithful_nodes": 1,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "dense_small_linear_all_issues_2": {
@@ -57,7 +57,7 @@
             "parents_max": 2,
             "confounders": 2,
             "num_unfaithful_nodes": 2,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "dense_med_linear_all_issues_2": {
@@ -147,7 +147,7 @@
             "parents_max": 2,
             "confounders": 10,
             "num_unfaithful_nodes": 10,
-            "random_seed": 42,
+            "random_seed": 39,
             "dag_type": "default"
         },
         "dense_x_large_linear_all_issues_2": {
