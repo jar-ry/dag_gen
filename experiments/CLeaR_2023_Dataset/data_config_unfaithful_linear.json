@@ -1,0 +1,136 @@
+{
+    "linear_mechanism": {
+        "small_linear_unfaithful_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 10,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 1,
+            "random_seed": 42,
+            "dag_type": "default"
+        },
+        "small_linear_unfaithful_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 10,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 1,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "small_linear_unfaithful_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 10,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 1,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "med_linear_unfaithful_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 20,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 2,
+            "random_seed": 42,
+            "dag_type": "default"
+        },
+        "med_linear_unfaithful_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 20,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 2,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "med_linear_unfaithful_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 20,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 2,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "large_linear_unfaithful_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 50,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 5,
+            "random_seed": 42,
+            "dag_type": "default"
+        },
+        "large_linear_unfaithful_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 50,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 5,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "large_linear_unfaithful_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 50,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 5,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "x_large_linear_unfaithful_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 100,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 10,
+            "random_seed": 42,
+            "dag_type": "default"
+        },
+        "x_large_linear_unfaithful_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 100,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 10,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "x_large_linear_unfaithful_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 100,
+            "parents_max": 1,
+            "num_unfaithful_nodes": 10,
+            "random_seed": 44,
+            "dag_type": "default"
+        }
+    }
+}

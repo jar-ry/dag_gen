@@ -1,11 +1,12 @@
 """Acyclic Graph Generator.
-
 Generates a dataset out of an acyclic FCM.
 Author : Jarry Chen
+Original Authors: Olivier Goudet and Diviyan Kalainathan
 
 .. MIT License
 ..
-.. Copyright (c) 2022 Jarry Chen
+.. Copyright (c) 2018 Diviyan Kalainathan
+.. Copyright (c) 2023 Jarry Chen
 ..
 .. Permission is hereby granted, free of charge, to any person obtaining a copy
 .. of this software and associated documentation files (the "Software"), to deal
@@ -26,12 +27,10 @@ Author : Jarry Chen
 .. SOFTWARE.
 """
 
-from typing import Dict
 from sklearn.preprocessing import scale
 import numpy as np
 import pandas as pd
 import networkx as nx
-from networkx.readwrite import json_graph
 
 from .causal_mechanisms import (
     LinearMechanism,
@@ -45,18 +44,14 @@ from .causal_mechanisms import (
     normal_noise,
     uniform_noise,
 )
+from .dag_generator import DAG_Generator
 import random
 import copy
 import json
-import os
-
-# import required modules
-import inspect
-import collections
 
 
 class Regenerate_Dag(Exception):
-    """Exception raised for errors in the input salary.
+    """Exception raised for errors in the input.
 
     Attributes:
         random_seed -- current random seed
@@ -112,7 +107,7 @@ class AcyclicGraphGenerator(object):
         confounders=0,
         num_unfaithful_nodes=0,
         random_seed=42,
-        dag_type="erdos",
+        dag_type="default",
     ):
         super(AcyclicGraphGenerator, self).__init__()
 
@@ -129,7 +124,6 @@ class AcyclicGraphGenerator(object):
             "sigmoid_mix": SigmoidMix_Mechanism,
             "gp_add": GaussianProcessAdd_Mechanism,
             "gp_mix": GaussianProcessMix_Mechanism,
-            "nn": NN_Mechanism,
         }
         node_parent_casual_mechanism = dict()
         nodes = nodes + confounders - num_unfaithful_nodes
@@ -139,14 +133,16 @@ class AcyclicGraphGenerator(object):
                 causal_mechanism_list.append(causal_mechanism_dict[key])
                 node_parent_casual_mechanism[f"node_{i}"] = key
             else:
-                causal_mechanism_list.append(causal_mechanism_dict[causal_mechanism])
+                causal_mechanism_list.append(
+                    causal_mechanism_dict[causal_mechanism])
                 node_parent_casual_mechanism[f"node_{i}"] = causal_mechanism
 
         self.mechanism_list = causal_mechanism_list
         self.node_parent_mechanism = node_parent_casual_mechanism
 
         # Init data
-        self.data = pd.DataFrame(None, columns=["V{}".format(i) for i in range(nodes)])
+        self.data = pd.DataFrame(
+            None, columns=["V{}".format(i) for i in range(nodes)])
 
         # Set n samples to generate
         if selection_bias_nodes:
@@ -164,7 +160,8 @@ class AcyclicGraphGenerator(object):
 
         # Set noise
         try:
-            self.noise = {"gaussian": normal_noise, "uniform": uniform_noise}[noise]
+            self.noise = {"gaussian": normal_noise,
+                          "uniform": uniform_noise}[noise]
         except KeyError:
             self.noise = noise
 
@@ -190,6 +187,7 @@ class AcyclicGraphGenerator(object):
         self.unfaithful_nodes = []
         self.deleted_nodes = []
         self.unfaithful_nodes_parents = []
+        self.random_seed = random_seed
 
     def init_dag(self, verbose):
         """Redefine the structure of the graph depending on dag_type
@@ -198,27 +196,9 @@ class AcyclicGraphGenerator(object):
         Args:
             verbose (bool): Verbosity
         """
-        if self.dag_type == "default":
-            for j in range(1, self.nodes):
-                nb_parents = np.random.randint(0, min([self.parents_max, j]) + 1)
-                for i in np.random.choice(range(0, j), nb_parents, replace=False):
-                    self.adjacency_matrix[i, j] = 1
-
-        elif self.dag_type == "erdos":
-            nb_edges = self.expected_degree * self.nodes
-            prob_connection = 2 * nb_edges / (self.nodes ** 2 - self.nodes)
-            causal_order = np.random.permutation(np.arange(self.nodes))
-
-            for i in range(self.nodes - 1):
-                node = causal_order[i]
-                possible_parents = causal_order[(i + 1) :]
-                num_parents = np.random.binomial(
-                    n=self.nodes - i - 1, p=prob_connection
-                )
-                parents = np.random.choice(
-                    possible_parents, size=num_parents, replace=False
-                )
-                self.adjacency_matrix[parents, node] = 1
+        dag_generator = DAG_Generator(
+            self.nodes, self.parents_max, self.confounders)
+        self.adjacency_matrix = dag_generator.generate()
 
         try:
             self.g = nx.DiGraph(self.adjacency_matrix)
@@ -246,6 +226,7 @@ class AcyclicGraphGenerator(object):
                 self.noise,
                 noise_coeff=self.noise_coeff,
                 unfaithful_noise_coeff=self.unfaithful_noise_coeff,
+                random_seed = self.random_seed
             )
             if sum(self.adjacency_matrix[:, i])
             else self.initial_generator
@@ -265,6 +246,7 @@ class AcyclicGraphGenerator(object):
         if self.cfunctions is None:
             self.init_variables()
         curr_unfaithful_nodes = 0
+
         for i in nx.topological_sort(self.g):
             # Root cause
             if not sum(self.adjacency_matrix[:, i]):
@@ -273,7 +255,8 @@ class AcyclicGraphGenerator(object):
             # Generating causes
             else:
                 data, unfaithful_data = self.cfunctions[i](
-                    self.data.iloc[:, self.adjacency_matrix[:, i].nonzero()[0]].values
+                    self.data.iloc[:, self.adjacency_matrix[:, i].nonzero()[
+                        0]].values
                 )
                 self.data[f"V{i}"] = data
 
@@ -299,52 +282,45 @@ class AcyclicGraphGenerator(object):
         if self.confounders:
             self.confounder_data = copy.deepcopy(self.data)
             self.confounder_graph = copy.deepcopy(self.g)
-            for i in range(0, self.confounders):
-                current_nodes = list(self.g.nodes)
-                confounder_deleted = False
-                while len(current_nodes) > 0 and not confounder_deleted:
-                    random.shuffle(current_nodes)
-                    random_sample = current_nodes.index(current_nodes[-1:][0])
-                    del current_nodes[-1:]
-                    delete_random_sample = False
-                    # Check if sample is not a leaf node (horizontally no 1s for this number)
-                    horizontal_vect = [
-                        i
-                        for i, e in enumerate(self.adjacency_matrix[random_sample])
-                        if e == 1
-                    ]
-                    if len(horizontal_vect) != 0:
-                        # Check if sample will disconnect the DAG into two graphs
-                        # Get the horizontal axis nodes and vertiacal axis node of the sample and see if any other node point to these nodes
-                        for idx in horizontal_vect:
-                            if (
-                                (
-                                    1 in self.adjacency_matrix[:, idx]
-                                    or 1 in self.adjacency_matrix[idx, :]
-                                )
-                                and random_sample not in self.unfaithful_nodes_parents
-                                and random_sample not in self.unfaithful_nodes
-                            ):
-                                delete_random_sample = True
-                            else:
-                                delete_random_sample = False
-                                break
-                    if delete_random_sample:
-                        self.g.remove_node(random_sample)
-                        self.adjacency_matrix = np.delete(
-                            self.adjacency_matrix, random_sample, 0
-                        )
-                        self.adjacency_matrix = np.delete(
-                            self.adjacency_matrix, random_sample, 1
-                        )
-                        self.data.drop(
-                            self.data.columns[random_sample], axis=1, inplace=True
-                        )
-                        confounder_deleted = True
-                        self.deleted_nodes.append(random_sample)
-            if len(self.deleted_nodes) < self.confounders:
-                raise Regenerate_Dag(self.random_seed, "Confounder not generated")
+            multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
 
+            print("multi_parent_nodes Original")
+            print(multi_parent_nodes)
+            if not multi_parent_nodes:
+                raise Regenerate_Dag(
+                    self.random_seed, f"No confounders found with at least two parents. Current random seed: {self.random_seed}"
+                )
+            confounder_deleted = 0
+            while confounder_deleted != self.confounders:
+                print("multi_parent_nodes")
+                print(multi_parent_nodes)
+                random.shuffle(multi_parent_nodes)
+                random_node = multi_parent_nodes.pop()
+                # Get parents of the random node
+                parents = list(self.g.predecessors(random_node))
+                # Check if removing one of the parents will disconnect the graph
+                for parent_to_remove in parents:
+                    remaining_nodes = [
+                        n for n in self.g.nodes if n not in self.deleted_nodes + [parent_to_remove]
+                    ]
+                    subgraph = self.g.subgraph(remaining_nodes)
+                    if nx.is_weakly_connected(subgraph):
+                        # Remove one of the parents instead of the random node
+                        self.g.remove_edge(parent_to_remove, random_node)
+                        self.adjacency_matrix[parent_to_remove, random_node] = 0
+                        self.data.drop(
+                            self.data.columns[parent_to_remove], axis=1, inplace=True
+                        )
+                        confounder_deleted += 1
+                        self.deleted_nodes.append(parent_to_remove)
+                        break
+            if len(self.deleted_nodes) < self.confounders:
+                raise Regenerate_Dag(
+                    self.random_seed, f"Confounder not generated. Current random seed: {self.random_seed}"
+                )
+
+        print("self.deleted_nodes")
+        print(self.deleted_nodes)
         # Create selection bias
         biased_nodes = []
         if self.selection_bias_nodes:
@@ -353,23 +329,33 @@ class AcyclicGraphGenerator(object):
                 for x in list(range(self.g.number_of_nodes()))
                 if (x not in self.deleted_nodes)
             ]
+            print("sample_idx")
+            print(sample_idx)
             biased_nodes = random.sample(sample_idx, self.selection_bias_nodes)
+            print("biased_nodes")
+            print(biased_nodes)
             for i in biased_nodes:
+                print("self.data")
+                print(self.data)
                 target_series = self.data[f"V{i}"].copy()
                 target_range = target_series[
                     (
                         target_series.index
                         >= np.percentile(
-                            target_series.index, 100 * self.selection_bias_range[0]
+                            target_series.index, 100 *
+                            self.selection_bias_range[0]
                         )
                     )
                     & (
                         target_series.index
                         < np.percentile(
-                            target_series.index, 100 * self.selection_bias_range[1]
+                            target_series.index, 100 *
+                            self.selection_bias_range[1]
                         )
                     )
                 ]
+                if len(target_range.index) < self.n_to_remove:
+                    self.n_to_remove = len(target_range.index)
                 drop_indices = np.random.choice(
                     target_range.index, self.n_to_remove, replace=False
                 )
@@ -384,7 +370,8 @@ class AcyclicGraphGenerator(object):
                 self.g.add_edge(f"_unfaithful{i}", f"{i}", weight=1)
                 if self.confounders:
                     self.confounder_graph.add_node(f"_unfaithful{i}")
-                    self.confounder_graph.add_edge(f"_unfaithful{i}", f"{i}", weight=1)
+                    self.confounder_graph.add_edge(
+                        f"_unfaithful{i}", f"{i}", weight=1)
 
         if self.confounders:
             return (
@@ -421,13 +408,17 @@ class AcyclicGraphGenerator(object):
             tuple: (pandas.DataFrame, networkx.DiGraph, dict, pandas.DataFrame, networkx.DiGraph), respectively the
             generated data, graph, causal mechanisms, confounder data, confounder graph
         """
-        data, graph, node_parent_mech, conf_data, conf_graph = self.generate(rescale)
+        data, graph, node_parent_mech, conf_data, conf_graph = self.generate(
+            rescale)
 
+        data.to_parquet(data_path + f"/data{data_index}.parquet")
         np.save(data_path + f"/data{data_index}.npy", data.to_numpy())
         np.save(data_path + f"/DAG{data_index}.npy", nx.to_numpy_matrix(graph))
         if self.confounders:
+            conf_data.to_parquet(data_path + f"/confounder_data{data_index}.parquet")
             np.save(
-                data_path + f"/confounder_data{data_index}.npy", conf_data.to_numpy()
+                data_path +
+                f"/confounder_data{data_index}.npy", conf_data.to_numpy()
             )
             np.save(
                 data_path + f"/confounder_DAG{data_index}.npy",

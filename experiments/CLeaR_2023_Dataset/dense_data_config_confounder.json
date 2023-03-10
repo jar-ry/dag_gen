@@ -1,0 +1,136 @@
+{
+    "mix_mechanism": {
+        "small_mixed_confounder_1": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 10,
+            "parents_max": 2,
+            "confounders": 1,
+            "random_seed": 42,
+            "dag_type": "default"
+        },
+        "small_mixed_confounder_2": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 10,
+            "parents_max": 2,
+            "confounders": 1,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "small_mixed_confounder_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 10,
+            "parents_max": 2,
+            "confounders": 1,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "med_mixed_confounder_1": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 20,
+            "parents_max": 2,
+            "confounders": 2,
+            "random_seed": 42,
+            "dag_type": "default"
+        },
+        "med_mixed_confounder_2": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 20,
+            "parents_max": 2,
+            "confounders": 2,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "med_mixed_confounder_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 20,
+            "parents_max": 2,
+            "confounders": 2,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "large_mixed_confounder_1": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 50,
+            "parents_max": 2,
+            "confounders": 5,
+            "random_seed": 42,
+            "dag_type": "default"
+        },
+        "large_mixed_confounder_2": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 50,
+            "parents_max": 2,
+            "confounders": 5,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "large_mixed_confounder_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 50,
+            "parents_max": 2,
+            "confounders": 5,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "x_large_mixed_confounder_1": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 100,
+            "parents_max": 2,
+            "confounders": 10,
+            "random_seed": 41,
+            "dag_type": "default"
+        },
+        "x_large_mixed_confounder_2": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 100,
+            "parents_max": 2,
+            "confounders": 10,
+            "random_seed": 45,
+            "dag_type": "default"
+        },
+        "x_large_mixed_confounder_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 3000,
+            "nodes": 100,
+            "parents_max": 2,
+            "confounders": 10,
+            "random_seed": 44,
+            "dag_type": "default"
+        }
+    }
+}

@@ -1,12 +1,13 @@
 from dag_gen.acyclic_graph_generator import AcyclicGraphGenerator
 import json
 import os
+import sys
 
 DATA_DIR = "data"
 
 
-def generate_data():
-    with open("data_config.json", "r") as f:
+def generate_data(data_config_name = "data_config.json"):
+    with open(data_config_name, "r") as f:
         data_config = json.load(f)
         for dataset_group, datasets in data_config.items():
             dataset_group_path = os.path.join(DATA_DIR, dataset_group)
@@ -28,4 +29,9 @@ def generate_data():
 
 if __name__ == "__main__":
     print("Generating data")
-    generate_data()
+    data_config = sys.argv[1]
+    print(data_config)
+    if data_config:
+        generate_data(data_config)
+    else:
+        generate_data()

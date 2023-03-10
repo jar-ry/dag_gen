@@ -1,10 +1,13 @@
-"""Defining a set of classes that represent causal functions/ mechanisms.
 
-Author: Jarry Chen
+"""Defining a set of classes that represent causal functions/ mechanisms.
+Author : Jarry Chen
+Original Authors: Diviyan Kalainathan
+
 
 .. MIT License
 ..
-.. Copyright (c) 2022 Jarry Chen
+.. Copyright (c) 2018 Diviyan Kalainathan
+.. Copyright (c) 2023 Jarry Chen
 ..
 .. Permission is hereby granted, free of charge, to any person obtaining a copy
 .. of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +28,7 @@ Author: Jarry Chen
 .. SOFTWARE.
 """
 
+
 import random
 import numpy as np
 from scipy.stats import bernoulli
@@ -37,8 +41,11 @@ import torch as th
 class LinearMechanism(object):
     """Linear mechanism, where Effect = alpha*Cause + Noise."""
 
-    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2):
+    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2, random_seed=42):
         """Init the mechanism."""
+        # Set random seed so tests are reproducible
+        random.seed(random_seed)
+        np.random.seed(random_seed)
         super(LinearMechanism, self).__init__()
         self.n_causes = ncauses
         self.points = points
@@ -66,8 +73,11 @@ class LinearMechanism(object):
 
 class SigmoidAM_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2):
+    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2, random_seed=42):
         """Init the mechanism."""
+        # Set random seed so tests are reproducible
+        random.seed(random_seed)
+        np.random.seed(random_seed)
         super(SigmoidAM_Mechanism, self).__init__()
         self.n_causes = ncauses
         self.points = points
@@ -108,8 +118,11 @@ class SigmoidAM_Mechanism(object):
 
 class SigmoidMix_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2):
+    def __init__(self, ncauses, points, noise_function, d=4, noise_coeff=.3, unfaithful_noise_coeff=0.2, random_seed=42):
         """Init the mechanism."""
+        # Set random seed so tests are reproducible
+        random.seed(random_seed)
+        np.random.seed(random_seed)
         super(SigmoidMix_Mechanism, self).__init__()
         self.n_causes = ncauses
         self.points = points
@@ -153,8 +166,11 @@ class SigmoidMix_Mechanism(object):
 
 class Polynomial_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, d=2, noise_coeff=.3, unfaithful_noise_coeff=0.2):
+    def __init__(self, ncauses, points, noise_function, d=2, noise_coeff=.3, unfaithful_noise_coeff=0.2, random_seed=42):
         """Init the mechanism."""
+        # Set random seed so tests are reproducible
+        random.seed(random_seed)
+        np.random.seed(random_seed)
         super(Polynomial_Mechanism, self).__init__()
         self.n_causes = ncauses
         self.points = points
@@ -211,8 +227,11 @@ def computeGaussKernel(x):
 
 class GaussianProcessAdd_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, noise_coeff=.3, unfaithful_noise_coeff=0.2):
+    def __init__(self, ncauses, points, noise_function, noise_coeff=.3, unfaithful_noise_coeff=0.2, random_seed=42):
         """Init the mechanism."""
+        # Set random seed so tests are reproducible
+        random.seed(random_seed)
+        np.random.seed(random_seed)
         super(GaussianProcessAdd_Mechanism, self).__init__()
         self.n_causes = ncauses
         self.points = points
@@ -260,8 +279,11 @@ class GaussianProcessAdd_Mechanism(object):
 
 class GaussianProcessMix_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, noise_coeff=.3, unfaithful_noise_coeff=0.2):
+    def __init__(self, ncauses, points, noise_function, noise_coeff=.3, unfaithful_noise_coeff=0.2, random_seed=42):
         """Init the mechanism."""
+        # Set random seed so tests are reproducible
+        random.seed(random_seed)
+        np.random.seed(random_seed)
         super(GaussianProcessMix_Mechanism, self).__init__()
         self.n_causes = ncauses
         self.points = points
@@ -310,8 +332,11 @@ class GaussianProcessMix_Mechanism(object):
 
 class NN_Mechanism(object):
 
-    def __init__(self, ncauses, points, noise_function, nh=20, noise_coeff=.3, unfaithful_noise_coeff=0.2):
+    def __init__(self, ncauses, points, noise_function, nh=20, noise_coeff=.3, unfaithful_noise_coeff=0.2, random_seed=42):
         """Init the mechanism."""
+        # Set random seed so tests are reproducible
+        random.seed(random_seed)
+        np.random.seed(random_seed)
         super(NN_Mechanism, self).__init__()
         self.n_causes = ncauses
         self.points = points
