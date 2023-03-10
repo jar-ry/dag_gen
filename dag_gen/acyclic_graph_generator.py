@@ -302,7 +302,7 @@ class AcyclicGraphGenerator(object):
 
                 parents = list(self.g.predecessors(random_node))
                 # Check if removing one of the parents will disconnect the graph
-                parents = 
+                # parents = 
                 random.shuffle(parents)
                 for parent_to_remove in parents:
                     remaining_nodes = [
