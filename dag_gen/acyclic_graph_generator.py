@@ -321,7 +321,7 @@ class AcyclicGraphGenerator(object):
                         print('self.data.columns 1')
                         print(self.data.columns)
                         self.data.drop(
-                            columns=[f"V{parent_to_remove}"]
+                            columns=[f"V{parent_to_remove}"], inplace=True
                         )
                         print('self.data.columns 1.5')
                         print(self.data.columns)
