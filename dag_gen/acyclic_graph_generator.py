@@ -283,13 +283,16 @@ class AcyclicGraphGenerator(object):
             self.confounder_data = copy.deepcopy(self.data)
             self.confounder_graph = copy.deepcopy(self.g)
             multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
+            loop_max = len(multi_parent_nodes)
 
             if not multi_parent_nodes:
                 raise Regenerate_Dag(
                     self.random_seed, f"No confounders found with at least two parents. Current random seed: {self.random_seed}"
                 )
 
-            while len(self.deleted_nodes) != self.confounders:
+            loop_counter = 0
+            while len(self.deleted_nodes) != self.confounders and loop_counter <= loop_max:
+                print(f"loop_counter: {loop_counter}, max_loop: {loop_max}")
                 multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
 
                 random.shuffle(multi_parent_nodes)
@@ -314,6 +317,8 @@ class AcyclicGraphGenerator(object):
                         )
                         self.deleted_nodes.append(parent_to_remove)
                         break
+                loop_counter += 1
+
             if len(self.deleted_nodes) < self.confounders:
                 raise Regenerate_Dag(
                     self.random_seed, f"Confounder not generated. Current random seed: {self.random_seed}"
