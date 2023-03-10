@@ -1,5 +1,20 @@
 {
     "mix_mechanism": {
+        "large_mixed_all_issues_3": {
+            "causal_mechanism": "mix",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "selection_bias_nodes": 5,
+            "selection_bias_ratio": 0.5,
+            "selection_bias_range": [0, 0.5],
+            "npoints": 2500,
+            "nodes": 30,
+            "parents_max": 1,
+            "confounders": 5,
+            "num_unfaithful_nodes": 5,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
         "small_mixed_all_issues_1": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
@@ -118,21 +133,6 @@
             "confounders": 5,
             "num_unfaithful_nodes": 5,
             "random_seed": 45,
-            "dag_type": "default"
-        },
-        "large_mixed_all_issues_3": {
-            "causal_mechanism": "mix",
-            "noise": "gaussian",
-            "noise_coeff": 0.3,
-            "selection_bias_nodes": 5,
-            "selection_bias_ratio": 0.5,
-            "selection_bias_range": [0, 0.5],
-            "npoints": 2500,
-            "nodes": 30,
-            "parents_max": 1,
-            "confounders": 5,
-            "num_unfaithful_nodes": 5,
-            "random_seed": 44,
             "dag_type": "default"
         },
         "x_large_mixed_all_issues_1": {
