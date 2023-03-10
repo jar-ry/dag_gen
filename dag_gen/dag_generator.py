@@ -59,7 +59,7 @@ class DAG_Generator:
             G = nx.DiGraph(self.adjacency_matrix)
             if not nx.is_directed_acyclic_graph(G):
                 self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
-                print("HERE3")
+                print("graph not dag")
                 continue
             
             # Connect disconnected nodes to a random node in the graph
