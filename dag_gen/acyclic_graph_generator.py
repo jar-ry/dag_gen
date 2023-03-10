@@ -284,8 +284,6 @@ class AcyclicGraphGenerator(object):
             self.confounder_graph = copy.deepcopy(self.g)
             multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
 
-            print("multi_parent_nodes Original")
-            print(multi_parent_nodes)
             if not multi_parent_nodes:
                 raise Regenerate_Dag(
                     self.random_seed, f"No confounders found with at least two parents. Current random seed: {self.random_seed}"
@@ -293,17 +291,14 @@ class AcyclicGraphGenerator(object):
 
             while len(self.deleted_nodes) != self.confounders:
                 multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
-                print("multi_parent_nodes")
-                print(multi_parent_nodes)
+
                 random.shuffle(multi_parent_nodes)
                 random_node = multi_parent_nodes.pop()
                 # Get parents of the random node
-                print("random_node")
-                print(random_node)
+
                 parents = list(self.g.predecessors(random_node))
                 # Check if removing one of the parents will disconnect the graph
-                print("parents")
-                print(parents)
+
                 random.shuffle(parents)
                 for parent_to_remove in parents:
                     remaining_nodes = [
@@ -312,9 +307,7 @@ class AcyclicGraphGenerator(object):
                     subgraph = self.g.subgraph(remaining_nodes)
                     if nx.is_weakly_connected(subgraph):
                         # Remove one of the parents instead of the random node
-                        print(self.g)
                         self.g.remove_edge(parent_to_remove, random_node)
-                        print(self.g)
                         self.adjacency_matrix[parent_to_remove, random_node] = 0
                         self.data.drop(
                             self.data.columns[parent_to_remove], axis=1, inplace=True
@@ -326,8 +319,6 @@ class AcyclicGraphGenerator(object):
                     self.random_seed, f"Confounder not generated. Current random seed: {self.random_seed}"
                 )
 
-        print("self.deleted_nodes")
-        print(self.deleted_nodes)
         # Create selection bias
         biased_nodes = []
         if self.selection_bias_nodes:
@@ -336,15 +327,9 @@ class AcyclicGraphGenerator(object):
                 for x in list(range(self.g.number_of_nodes()))
                 if (x not in self.deleted_nodes)
             ]
-            print("sample_idx")
-            print(sample_idx)
+
             biased_nodes = random.sample(sample_idx, self.selection_bias_nodes)
-            print("biased_nodes")
-            print(biased_nodes)
             for i in biased_nodes:
-                print("self.data")
-                print(self.data)
-                print(self.data.columns)
                 target_series = self.data[f"V{i}"].copy()
                 target_range = target_series[
                     (
