@@ -306,9 +306,9 @@ class AcyclicGraphGenerator(object):
                     ]
                     subgraph = self.g.subgraph(remaining_nodes)
                     if nx.is_weakly_connected(subgraph):
-                        # Remove one of the parents instead of the random node
-                        self.g.remove_edge(parent_to_remove, random_node)
-                        self.adjacency_matrix[parent_to_remove, random_node] = 0
+                        self.g.remove_node(parent_to_remove)
+                        self.adjacency_matrix[parent_to_remove, :] = 0
+                        self.adjacency_matrix[:, parent_to_remove] = 0
                         self.data.drop(
                             self.data.columns[parent_to_remove], axis=1, inplace=True
                         )
