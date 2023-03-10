@@ -96,12 +96,10 @@ class DAG_Generator:
                     if len(candidates) == 0:
                         self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
                         break
-                    new_parent = np.random.choice(candidates)
                     for parent in candidates:
                         if nx.is_weakly_connected(G.subgraph(set(G.nodes)-set([parent]))):
-                            new_parent = np.random.choice(candidates)
                             self.number_nodes_with_two_or_more_parents += 1
-                            self.adjacency_matrix[new_parent, node] = 1
+                            self.adjacency_matrix[parent, node] = 1
                             break
                     self.adjacency_matrix = np.zeros((self.nodes, self.nodes))
                     break
