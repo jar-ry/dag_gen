@@ -73,7 +73,7 @@
             "npoints": 2500,
             "nodes": 25,
             "parents_max": 2,
-            "confounders": 5,
+            "confounders": 3,
             "random_seed": 39,
             "dag_type": "default"
         },
@@ -84,7 +84,7 @@
             "npoints": 2500,
             "nodes": 25,
             "parents_max": 2,
-            "confounders": 5,
+            "confounders": 3,
             "random_seed": 43,
             "dag_type": "default"
         },
@@ -95,7 +95,7 @@
             "npoints": 2500,
             "nodes": 25,
             "parents_max": 2,
-            "confounders": 5,
+            "confounders": 3,
             "random_seed": 44,
             "dag_type": "default"
         },
@@ -106,7 +106,7 @@
             "npoints": 2500,
             "nodes": 50,
             "parents_max": 2,
-            "confounders": 10,
+            "confounders": 5,
             "random_seed": 39,
             "dag_type": "default"
         },
@@ -117,7 +117,7 @@
             "npoints": 2500,
             "nodes": 50,
             "parents_max": 2,
-            "confounders": 10,
+            "confounders": 5,
             "random_seed": 43,
             "dag_type": "default"
         },
@@ -128,7 +128,7 @@
             "npoints": 2500,
             "nodes": 50,
             "parents_max": 2,
-            "confounders": 10,
+            "confounders": 5,
             "random_seed": 44,
             "dag_type": "default"
         }
