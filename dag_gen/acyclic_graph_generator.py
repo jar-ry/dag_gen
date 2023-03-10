@@ -302,7 +302,7 @@ class AcyclicGraphGenerator(object):
 
                 parents = list(self.g.predecessors(random_node))
                 # Check if removing one of the parents will disconnect the graph
-
+                parents = 
                 random.shuffle(parents)
                 for parent_to_remove in parents:
                     remaining_nodes = [
@@ -315,6 +315,8 @@ class AcyclicGraphGenerator(object):
                         self.g.remove_node(parent_to_remove)
                         self.adjacency_matrix[parent_to_remove, :] = 0
                         self.adjacency_matrix[:, parent_to_remove] = 0
+                        print('self.data.columns 1')
+                        print(self.data.columns)
                         self.data.drop(
                             self.data.columns[parent_to_remove], axis=1, inplace=True
                         )
@@ -338,6 +340,8 @@ class AcyclicGraphGenerator(object):
 
             biased_nodes = random.sample(sample_idx, self.selection_bias_nodes)
             for i in biased_nodes:
+                print('self.data.columns 2')
+                print(self.data.columns)
                 target_series = self.data[f"V{i}"].copy()
                 target_range = target_series[
                     (
