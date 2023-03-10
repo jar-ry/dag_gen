@@ -86,7 +86,7 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 2500,
-            "nodes": 30,
+            "nodes": 25,
             "parents_max": 1,
             "random_seed": 39,
             "dag_type": "default"
@@ -99,7 +99,7 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 2500,
-            "nodes": 30,
+            "nodes": 25,
             "parents_max": 1,
             "random_seed": 43,
             "dag_type": "default"
@@ -112,7 +112,7 @@
             "selection_bias_ratio": 0.5,
             "selection_bias_range": [0, 0.5],
             "npoints": 2500,
-            "nodes": 30,
+            "nodes": 25,
             "parents_max": 1,
             "random_seed": 44,
             "dag_type": "default"
