@@ -32,7 +32,7 @@ import numpy as np
 import pandas as pd
 import networkx as nx
 
-from causal_mechanisms import (
+from .causal_mechanisms import (
     LinearMechanism,
     Polynomial_Mechanism,
     SigmoidAM_Mechanism,
@@ -43,7 +43,7 @@ from causal_mechanisms import (
     normal_noise,
     uniform_noise,
 )
-from dag_generator import DAG_Generator
+from .dag_generator import DAG_Generator
 import random
 import copy
 import json
