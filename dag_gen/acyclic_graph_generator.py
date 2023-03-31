@@ -427,12 +427,12 @@ class AcyclicGraphGenerator(object):
         """
         data, graph, node_parent_mech, conf_data, conf_graph = self.generate(rescale)
 
-        # data.to_parquet(data_path + f"/data{data_index}.parquet")
+        data.to_parquet(data_path + f"/data{data_index}.parquet")
         numpy_data = data.to_numpy()
         np.save(data_path + f"/data{data_index}.npy", numpy_data)
         np.save(data_path + f"/DAG{data_index}.npy", nx.to_numpy_matrix(graph))
         if self.confounders:
-            # conf_data.to_parquet(data_path + f"/confounder_data{data_index}.parquet")
+            conf_data.to_parquet(data_path + f"/confounder_data{data_index}.parquet")
             np.save(
                 data_path + f"/confounder_data{data_index}.npy", conf_data.to_numpy()
             )
