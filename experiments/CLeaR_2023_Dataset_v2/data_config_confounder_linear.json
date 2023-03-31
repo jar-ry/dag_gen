@@ -1,0 +1,136 @@
+{
+    "linear_mechanism": {
+        "small_linear_confounder_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 10,
+            "parents_max": 1,
+            "confounders": 1,
+            "random_seed": 39,
+            "dag_type": "default"
+        },
+        "small_linear_confounder_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 10,
+            "parents_max": 1,
+            "confounders": 1,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "small_linear_confounder_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 10,
+            "parents_max": 1,
+            "confounders": 1,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "med_linear_confounder_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 15,
+            "parents_max": 1,
+            "confounders": 2,
+            "random_seed": 39,
+            "dag_type": "default"
+        },
+        "med_linear_confounder_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 15,
+            "parents_max": 1,
+            "confounders": 2,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "med_linear_confounder_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 15,
+            "parents_max": 1,
+            "confounders": 2,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "large_linear_confounder_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 25,
+            "parents_max": 1,
+            "confounders": 3,
+            "random_seed": 39,
+            "dag_type": "default"
+        },
+        "large_linear_confounder_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 25,
+            "parents_max": 1,
+            "confounders": 3,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "large_linear_confounder_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 25,
+            "parents_max": 1,
+            "confounders": 3,
+            "random_seed": 44,
+            "dag_type": "default"
+        },
+        "x_large_linear_confounder_1": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 50,
+            "parents_max": 1,
+            "confounders": 5,
+            "random_seed": 39,
+            "dag_type": "default"
+        },
+        "x_large_linear_confounder_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 50,
+            "parents_max": 1,
+            "confounders": 5,
+            "random_seed": 43,
+            "dag_type": "default"
+        },
+        "x_large_linear_confounder_3": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "npoints": 2500,
+            "nodes": 50,
+            "parents_max": 1,
+            "confounders": 5,
+            "random_seed": 44,
+            "dag_type": "default"
+        }
+    }
+}
