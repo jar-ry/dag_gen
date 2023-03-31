@@ -32,19 +32,18 @@ import numpy as np
 import pandas as pd
 import networkx as nx
 
-from .causal_mechanisms import (
+from causal_mechanisms import (
     LinearMechanism,
     Polynomial_Mechanism,
     SigmoidAM_Mechanism,
     SigmoidMix_Mechanism,
     GaussianProcessAdd_Mechanism,
     GaussianProcessMix_Mechanism,
-    NN_Mechanism,
     gmm_cause,
     normal_noise,
     uniform_noise,
 )
-from .dag_generator import DAG_Generator
+from dag_generator import DAG_Generator
 import random
 import copy
 import json
@@ -133,16 +132,14 @@ class AcyclicGraphGenerator(object):
                 causal_mechanism_list.append(causal_mechanism_dict[key])
                 node_parent_casual_mechanism[f"node_{i}"] = key
             else:
-                causal_mechanism_list.append(
-                    causal_mechanism_dict[causal_mechanism])
+                causal_mechanism_list.append(causal_mechanism_dict[causal_mechanism])
                 node_parent_casual_mechanism[f"node_{i}"] = causal_mechanism
 
         self.mechanism_list = causal_mechanism_list
         self.node_parent_mechanism = node_parent_casual_mechanism
 
         # Init data
-        self.data = pd.DataFrame(
-            None, columns=["V{}".format(i) for i in range(nodes)])
+        self.data = pd.DataFrame(None, columns=["V{}".format(i) for i in range(nodes)])
 
         # Set n samples to generate
         if selection_bias_nodes:
@@ -160,8 +157,7 @@ class AcyclicGraphGenerator(object):
 
         # Set noise
         try:
-            self.noise = {"gaussian": normal_noise,
-                          "uniform": uniform_noise}[noise]
+            self.noise = {"gaussian": normal_noise, "uniform": uniform_noise}[noise]
         except KeyError:
             self.noise = noise
 
@@ -196,8 +192,7 @@ class AcyclicGraphGenerator(object):
         Args:
             verbose (bool): Verbosity
         """
-        dag_generator = DAG_Generator(
-            self.nodes, self.parents_max, self.confounders)
+        dag_generator = DAG_Generator(self.nodes, self.parents_max, self.confounders)
         self.adjacency_matrix = dag_generator.generate()
 
         try:
@@ -226,7 +221,7 @@ class AcyclicGraphGenerator(object):
                 self.noise,
                 noise_coeff=self.noise_coeff,
                 unfaithful_noise_coeff=self.unfaithful_noise_coeff,
-                random_seed = self.random_seed
+                random_seed=self.random_seed,
             )
             if sum(self.adjacency_matrix[:, i])
             else self.initial_generator
@@ -255,8 +250,7 @@ class AcyclicGraphGenerator(object):
             # Generating causes
             else:
                 data, unfaithful_data = self.cfunctions[i](
-                    self.data.iloc[:, self.adjacency_matrix[:, i].nonzero()[
-                        0]].values
+                    self.data.iloc[:, self.adjacency_matrix[:, i].nonzero()[0]].values
                 )
                 self.data[f"V{i}"] = data
 
@@ -282,18 +276,31 @@ class AcyclicGraphGenerator(object):
         if self.confounders:
             self.confounder_data = copy.deepcopy(self.data)
             self.confounder_graph = copy.deepcopy(self.g)
-            multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
+            multi_parent_nodes = [
+                n
+                for n in self.g.nodes
+                if len(list(self.g.predecessors(n))) >= 2
+                and n not in self.unfaithful_nodes
+            ]
             loop_max = len(multi_parent_nodes)
 
             if not multi_parent_nodes:
                 raise Regenerate_Dag(
-                    self.random_seed, f"No confounders found with at least two parents. Current random seed: {self.random_seed}"
+                    self.random_seed,
+                    f"No confounders found with at least two parents. Current random seed: {self.random_seed}",
                 )
 
             loop_counter = 0
-            while len(self.deleted_nodes) != self.confounders and loop_counter <= loop_max:
+            while (
+                len(self.deleted_nodes) != self.confounders and loop_counter <= loop_max
+            ):
                 print(f"loop_counter: {loop_counter}, max_loop: {loop_max}")
-                multi_parent_nodes = [n for n in self.g.nodes if len(list(self.g.predecessors(n))) >= 2 and n not in self.unfaithful_nodes]
+                multi_parent_nodes = [
+                    n
+                    for n in self.g.nodes
+                    if len(list(self.g.predecessors(n))) >= 2
+                    and n not in self.unfaithful_nodes
+                ]
                 print("multi_parent_nodes")
                 print(multi_parent_nodes)
                 random.shuffle(multi_parent_nodes)
@@ -302,28 +309,28 @@ class AcyclicGraphGenerator(object):
 
                 parents = list(self.g.predecessors(random_node))
                 # Check if removing one of the parents will disconnect the graph
-                # parents = 
+                # parents =
                 random.shuffle(parents)
                 for parent_to_remove in parents:
                     remaining_nodes = [
-                        n for n in self.g.nodes if n not in self.deleted_nodes + [parent_to_remove]
+                        n
+                        for n in self.g.nodes
+                        if n not in self.deleted_nodes + [parent_to_remove]
                     ]
                     subgraph = self.g.subgraph(remaining_nodes)
                     if nx.is_weakly_connected(subgraph):
                         print("parent_to_remove")
                         print(parent_to_remove)
-                        print('self.data.columns 0')
+                        print("self.data.columns 0")
                         print(self.data.columns)
                         self.g.remove_node(parent_to_remove)
                         # Load the adjacency matrix again from the updated graph
                         self.adjacency_matrix = nx.to_numpy_array(self.g)
 
-                        print('self.data.columns 1')
+                        print("self.data.columns 1")
                         print(self.data.columns)
-                        self.data.drop(
-                            columns=[f"V{parent_to_remove}"], inplace=True
-                        )
-                        print('self.data.columns 1.5')
+                        self.data.drop(columns=[f"V{parent_to_remove}"], inplace=True)
+                        print("self.data.columns 1.5")
                         print(self.data.columns)
                         self.deleted_nodes.append(parent_to_remove)
                         break
@@ -331,7 +338,8 @@ class AcyclicGraphGenerator(object):
 
             if len(self.deleted_nodes) < self.confounders:
                 raise Regenerate_Dag(
-                    self.random_seed, f"Confounder not generated. Current random seed: {self.random_seed}"
+                    self.random_seed,
+                    f"Confounder not generated. Current random seed: {self.random_seed}",
                 )
 
         # Create selection bias
@@ -345,22 +353,20 @@ class AcyclicGraphGenerator(object):
 
             biased_nodes = random.sample(sample_idx, self.selection_bias_nodes)
             for i in biased_nodes:
-                print('self.data.columns 2')
+                print("self.data.columns 2")
                 print(self.data.columns)
                 target_series = self.data[f"V{i}"].copy()
                 target_range = target_series[
                     (
                         target_series.index
                         >= np.percentile(
-                            target_series.index, 100 *
-                            self.selection_bias_range[0]
+                            target_series.index, 100 * self.selection_bias_range[0]
                         )
                     )
                     & (
                         target_series.index
                         < np.percentile(
-                            target_series.index, 100 *
-                            self.selection_bias_range[1]
+                            target_series.index, 100 * self.selection_bias_range[1]
                         )
                     )
                 ]
@@ -373,7 +379,7 @@ class AcyclicGraphGenerator(object):
                 if self.confounders:
                     self.confounder_data.drop(drop_indices, inplace=True)
 
-        print('len(self.data)')
+        print("len(self.data)")
         print(len(self.data))
         # Generate unfaithful node to cancel cause
         if self.num_unfaithful_nodes:
@@ -382,8 +388,7 @@ class AcyclicGraphGenerator(object):
                 self.g.add_edge(f"_unfaithful{i}", f"{i}", weight=1)
                 if self.confounders:
                     self.confounder_graph.add_node(f"_unfaithful{i}")
-                    self.confounder_graph.add_edge(
-                        f"_unfaithful{i}", f"{i}", weight=1)
+                    self.confounder_graph.add_edge(f"_unfaithful{i}", f"{i}", weight=1)
 
         if self.confounders:
             return (
@@ -420,17 +425,16 @@ class AcyclicGraphGenerator(object):
             tuple: (pandas.DataFrame, networkx.DiGraph, dict, pandas.DataFrame, networkx.DiGraph), respectively the
             generated data, graph, causal mechanisms, confounder data, confounder graph
         """
-        data, graph, node_parent_mech, conf_data, conf_graph = self.generate(
-            rescale)
+        data, graph, node_parent_mech, conf_data, conf_graph = self.generate(rescale)
 
-        data.to_parquet(data_path + f"/data{data_index}.parquet")
-        np.save(data_path + f"/data{data_index}.npy", data.to_numpy())
+        # data.to_parquet(data_path + f"/data{data_index}.parquet")
+        numpy_data = data.to_numpy()
+        np.save(data_path + f"/data{data_index}.npy", numpy_data)
         np.save(data_path + f"/DAG{data_index}.npy", nx.to_numpy_matrix(graph))
         if self.confounders:
-            conf_data.to_parquet(data_path + f"/confounder_data{data_index}.parquet")
+            # conf_data.to_parquet(data_path + f"/confounder_data{data_index}.parquet")
             np.save(
-                data_path +
-                f"/confounder_data{data_index}.npy", conf_data.to_numpy()
+                data_path + f"/confounder_data{data_index}.npy", conf_data.to_numpy()
             )
             np.save(
                 data_path + f"/confounder_DAG{data_index}.npy",
