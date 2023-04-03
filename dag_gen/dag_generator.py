@@ -47,10 +47,8 @@ class DAG_Generator:
             print("Generate Count:", self.generate_count)
             # Initialize the adjacency matrix with edges
             for j in range(1, self.nodes):
-                if self.confounders != 0 and self.parents_max == 1:
-                    nb_parents = np.random.randint(
-                        0, min([self.parents_max, j]) + 1 + self.confounders
-                    )
+                if self.confounders != 0:
+                    nb_parents = np.random.randint(0, min([self.parents_max, j]) + 1 + self.confounders)
                 else:
                     nb_parents = np.random.randint(0, min([self.parents_max, j]) + 1)
 
