@@ -14,18 +14,54 @@ Skipping:  data/mix_mechanism/dense_x_large_mixed_all_issues_2
 Skipping:  data/mix_mechanism/dense_x_large_mixed_all_issues_3
 Generating data
 dense_data_config_no_issue.json
-Skipping:  data/mix_mechanism/dense_small_mixed_confounder_1
-Skipping:  data/mix_mechanism/dense_small_mixed_confounder_2
-Skipping:  data/mix_mechanism/dense_small_mixed_confounder_3
-Skipping:  data/mix_mechanism/dense_med_mixed_confounder_1
-Skipping:  data/mix_mechanism/dense_med_mixed_confounder_2
-Skipping:  data/mix_mechanism/dense_med_mixed_confounder_3
-Skipping:  data/mix_mechanism/dense_large_mixed_confounder_1
-Skipping:  data/mix_mechanism/dense_large_mixed_confounder_2
-Skipping:  data/mix_mechanism/dense_large_mixed_confounder_3
-Skipping:  data/mix_mechanism/dense_x_large_mixed_confounder_1
-Skipping:  data/mix_mechanism/dense_x_large_mixed_confounder_2
-Skipping:  data/mix_mechanism/dense_x_large_mixed_confounder_3
+Generating:  data/mix_mechanism/dense_small_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_small_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_small_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_med_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_med_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_med_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_large_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_large_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_large_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_x_large_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_x_large_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_x_large_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
 Generating data
 dense_data_config_confounder.json
 Skipping:  data/mix_mechanism/dense_small_mixed_confounder_1
@@ -84,18 +120,54 @@ Skipping:  data/linear_mechanism/dense_x_large_linear_all_issues_2
 Skipping:  data/linear_mechanism/dense_x_large_linear_all_issues_3
 Generating data
 dense_data_config_no_issue_linear.json
-Skipping:  data/linear_mechanism/dense_small_linear_confounder_1
-Skipping:  data/linear_mechanism/dense_small_linear_confounder_2
-Skipping:  data/linear_mechanism/dense_small_linear_confounder_3
-Skipping:  data/linear_mechanism/dense_med_linear_confounder_1
-Skipping:  data/linear_mechanism/dense_med_linear_confounder_2
-Skipping:  data/linear_mechanism/dense_med_linear_confounder_3
-Skipping:  data/linear_mechanism/dense_large_linear_confounder_1
-Skipping:  data/linear_mechanism/dense_large_linear_confounder_2
-Skipping:  data/linear_mechanism/dense_large_linear_confounder_3
-Skipping:  data/linear_mechanism/dense_x_large_linear_confounder_1
-Skipping:  data/linear_mechanism/dense_x_large_linear_confounder_2
-Skipping:  data/linear_mechanism/dense_x_large_linear_confounder_3
+Generating:  data/linear_mechanism/dense_small_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_small_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_small_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_med_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_med_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_med_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_large_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_large_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_large_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_x_large_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_x_large_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_x_large_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
 Generating data
 dense_data_config_confounder_linear.json
 Skipping:  data/linear_mechanism/dense_small_linear_confounder_1
@@ -154,18 +226,54 @@ Skipping:  data/mix_mechanism/x_large_mixed_all_issues_2
 Skipping:  data/mix_mechanism/x_large_mixed_all_issues_3
 Generating data
 data_config_no_issue.json
-Skipping:  data/mix_mechanism/small_mixed_confounder_1
-Skipping:  data/mix_mechanism/small_mixed_confounder_2
-Skipping:  data/mix_mechanism/small_mixed_confounder_3
-Skipping:  data/mix_mechanism/med_mixed_confounder_1
-Skipping:  data/mix_mechanism/med_mixed_confounder_2
-Skipping:  data/mix_mechanism/med_mixed_confounder_3
-Skipping:  data/mix_mechanism/large_mixed_confounder_1
-Skipping:  data/mix_mechanism/large_mixed_confounder_2
-Skipping:  data/mix_mechanism/large_mixed_confounder_3
-Skipping:  data/mix_mechanism/x_large_mixed_confounder_1
-Skipping:  data/mix_mechanism/x_large_mixed_confounder_2
-Skipping:  data/mix_mechanism/x_large_mixed_confounder_3
+Generating:  data/mix_mechanism/small_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/small_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/small_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/med_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/med_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/med_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/large_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/large_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/large_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/x_large_mixed_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/x_large_mixed_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/x_large_mixed_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
 Generating data
 data_config_confounder.json
 Skipping:  data/mix_mechanism/small_mixed_confounder_1
@@ -224,18 +332,54 @@ Skipping:  data/linear_mechanism/x_large_linear_all_issues_2
 Skipping:  data/linear_mechanism/x_large_linear_all_issues_3
 Generating data
 data_config_no_issue_linear.json
-Skipping:  data/linear_mechanism/small_linear_confounder_1
-Skipping:  data/linear_mechanism/small_linear_confounder_2
-Skipping:  data/linear_mechanism/small_linear_confounder_3
-Skipping:  data/linear_mechanism/med_linear_confounder_1
-Skipping:  data/linear_mechanism/med_linear_confounder_2
-Skipping:  data/linear_mechanism/med_linear_confounder_3
-Skipping:  data/linear_mechanism/large_linear_confounder_1
-Skipping:  data/linear_mechanism/large_linear_confounder_2
-Skipping:  data/linear_mechanism/large_linear_confounder_3
-Skipping:  data/linear_mechanism/x_large_linear_confounder_1
-Skipping:  data/linear_mechanism/x_large_linear_confounder_2
-Skipping:  data/linear_mechanism/x_large_linear_confounder_3
+Generating:  data/linear_mechanism/small_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/small_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/small_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/med_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/med_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/med_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/large_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/large_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/large_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/x_large_linear_no_issue_1
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/x_large_linear_no_issue_2
+Generate Count: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/x_large_linear_no_issue_3
+Generate Count: 1
+len(self.data)
+2500
 Generating data
 data_config_confounder_linear.json
 Skipping:  data/linear_mechanism/small_linear_confounder_1
@@ -264,13 +408,17 @@ Skipping:  data/linear_mechanism/large_linear_selection_bias_3
 Skipping:  data/linear_mechanism/x_large_linear_selection_bias_1
 Skipping:  data/linear_mechanism/x_large_linear_selection_bias_2
 Skipping:  data/linear_mechanism/x_large_linear_selection_bias_3
-Traceback (most recent call last):
-  File "./../generate_data.py", line 1, in <module>
-    from dag_gen.acyclic_graph_generator import AcyclicGraphGenerator
-  File "/home/jarrychen/anaconda3/envs/py37_env/lib/python3.7/site-packages/dag_gen/acyclic_graph_generator.py", line 35, in <module>
-    from .causal_mechanisms import (
-  File "/home/jarrychen/anaconda3/envs/py37_env/lib/python3.7/site-packages/dag_gen/causal_mechanisms.py", line 38, in <module>
-    import torch as th
-  File "/home/jarrychen/anaconda3/envs/py37_env/lib/python3.7/site-packages/torch/__init__.py", line 218, in <module>
-    from torch._C import *  # noqa: F403
-RuntimeError: KeyboardInterrupt: <EMPTY MESSAGE>
+Generating data
+data_config_unfaithful_linear.json
+Skipping:  data/linear_mechanism/small_linear_unfaithful_1
+Skipping:  data/linear_mechanism/small_linear_unfaithful_2
+Skipping:  data/linear_mechanism/small_linear_unfaithful_3
+Skipping:  data/linear_mechanism/med_linear_unfaithful_1
+Skipping:  data/linear_mechanism/med_linear_unfaithful_2
+Skipping:  data/linear_mechanism/med_linear_unfaithful_3
+Skipping:  data/linear_mechanism/large_linear_unfaithful_1
+Skipping:  data/linear_mechanism/large_linear_unfaithful_2
+Skipping:  data/linear_mechanism/large_linear_unfaithful_3
+Skipping:  data/linear_mechanism/x_large_linear_unfaithful_1
+Skipping:  data/linear_mechanism/x_large_linear_unfaithful_2
+Skipping:  data/linear_mechanism/x_large_linear_unfaithful_3
