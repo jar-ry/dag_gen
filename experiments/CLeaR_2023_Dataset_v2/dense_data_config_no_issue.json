@@ -1,6 +1,6 @@
 {
     "mix_mechanism": {
-        "dense_small_mixed_confounder_1": {
+        "dense_small_mixed_no_issue_1": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -10,7 +10,7 @@
             "random_seed": 39,
             "dag_type": "default"
         },
-        "dense_small_mixed_confounder_2": {
+        "dense_small_mixed_no_issue_2": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -20,7 +20,7 @@
             "random_seed": 43,
             "dag_type": "default"
         },
-        "dense_small_mixed_confounder_3": {
+        "dense_small_mixed_no_issue_3": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -30,7 +30,7 @@
             "random_seed": 44,
             "dag_type": "default"
         },
-        "dense_med_mixed_confounder_1": {
+        "dense_med_mixed_no_issue_1": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -40,7 +40,7 @@
             "random_seed": 39,
             "dag_type": "default"
         },
-        "dense_med_mixed_confounder_2": {
+        "dense_med_mixed_no_issue_2": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -50,7 +50,7 @@
             "random_seed": 43,
             "dag_type": "default"
         },
-        "dense_med_mixed_confounder_3": {
+        "dense_med_mixed_no_issue_3": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -60,7 +60,7 @@
             "random_seed": 44,
             "dag_type": "default"
         },
-        "dense_large_mixed_confounder_1": {
+        "dense_large_mixed_no_issue_1": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -70,7 +70,7 @@
             "random_seed": 39,
             "dag_type": "default"
         },
-        "dense_large_mixed_confounder_2": {
+        "dense_large_mixed_no_issue_2": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -80,7 +80,7 @@
             "random_seed": 43,
             "dag_type": "default"
         },
-        "dense_large_mixed_confounder_3": {
+        "dense_large_mixed_no_issue_3": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -90,7 +90,7 @@
             "random_seed": 44,
             "dag_type": "default"
         },
-        "dense_x_large_mixed_confounder_1": {
+        "dense_x_large_mixed_no_issue_1": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -100,7 +100,7 @@
             "random_seed": 41,
             "dag_type": "default"
         },
-        "dense_x_large_mixed_confounder_2": {
+        "dense_x_large_mixed_no_issue_2": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
@@ -110,7 +110,7 @@
             "random_seed": 45,
             "dag_type": "default"
         },
-        "dense_x_large_mixed_confounder_3": {
+        "dense_x_large_mixed_no_issue_3": {
             "causal_mechanism": "mix",
             "noise": "gaussian",
             "noise_coeff": 0.3,
