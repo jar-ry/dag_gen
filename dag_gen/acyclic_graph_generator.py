@@ -302,8 +302,7 @@ class AcyclicGraphGenerator(object):
                     if len(list(self.g.predecessors(n))) >= 2
                     and all(pred not in self.unfaithful_nodes for pred in self.g.predecessors(n))
                 ]
-                print("multi_parent_nodes")
-                print(multi_parent_nodes)
+
                 random.shuffle(multi_parent_nodes)
                 random_node = multi_parent_nodes.pop()
                 # Get parents of the random node
@@ -318,25 +317,12 @@ class AcyclicGraphGenerator(object):
                         for n in self.g.nodes
                         if n not in self.deleted_nodes + [parent_to_remove]
                     ]
-                    subgraph = self.g.subgraph(remaining_nodes)
-                    e = list(subgraph.edges())
-                    causal_nex_graph = StructureModel(e)
-                    viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-                    viz.draw(f"test_{loop_counter}.jpg", format="jpg")
+
                     if nx.is_weakly_connected(subgraph):
-                        print("parent_to_remove")
-                        print(parent_to_remove)
-                        print("self.data.columns 0")
-                        print(self.data.columns)
                         self.g.remove_node(parent_to_remove)
                         # Load the adjacency matrix again from the updated graph
                         self.adjacency_matrix = nx.to_numpy_array(self.g)
-
-                        print("self.data.columns 1")
-                        print(self.data.columns)
                         self.data.drop(columns=[f"V{parent_to_remove}"], inplace=True)
-                        print("self.data.columns 1.5")
-                        print(self.data.columns)
                         self.deleted_nodes.append(parent_to_remove)
                         break
                 loop_counter += 1
@@ -362,8 +348,6 @@ class AcyclicGraphGenerator(object):
 
             biased_nodes = random.sample(sample_idx, self.selection_bias_nodes)
             for i in biased_nodes:
-                print("self.data.columns 2")
-                print(self.data.columns)
                 target_series = self.data[f"V{i}"].copy()
                 target_range = target_series[
                     (
