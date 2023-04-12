@@ -27,7 +27,7 @@
             "parents_max": 4,
             "confounders": 1,
             "num_unfaithful_nodes": 1,
-            "random_seed": 43,
+            "random_seed": 42,
             "dag_type": "default"
         },
         "dense_small_linear_all_issues_3": {
