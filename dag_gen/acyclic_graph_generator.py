@@ -317,6 +317,7 @@ class AcyclicGraphGenerator(object):
                         for n in self.g.nodes
                         if n not in self.deleted_nodes + [parent_to_remove]
                     ]
+                    subgraph = self.g.subgraph(remaining_nodes)
 
                     if nx.is_weakly_connected(subgraph):
                         self.g.remove_node(parent_to_remove)
