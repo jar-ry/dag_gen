@@ -457,7 +457,7 @@ class AcyclicGraphGenerator(object):
         with open(data_path + "/causal_mechanisms.json", "w", encoding="utf-8") as f:
             json.dump(node_parent_mech, f, ensure_ascii=False, indent=4)
 
-        e = list(graph_read.edges())
+        e = list(graph.edges())
         causal_nex_graph = StructureModel(e)
         viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
         viz.draw("writing_output", format="jpg")
