@@ -322,7 +322,7 @@ class AcyclicGraphGenerator(object):
                     e = list(subgraph.edges())
                     causal_nex_graph = StructureModel(e)
                     viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-                    viz.draw("test.jpg", format="jpg")
+                    viz.draw(f"test_{loop_counter}.jpg", format="jpg")
                     if nx.is_weakly_connected(subgraph):
                         print("parent_to_remove")
                         print(parent_to_remove)
@@ -347,6 +347,10 @@ class AcyclicGraphGenerator(object):
                     f"Confounder not generated. Current random seed: {self.random_seed}",
                 )
 
+        e = list(self.g.edges())
+        causal_nex_graph = StructureModel(e)
+        viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
+        viz.draw(f"final.jpg", format="jpg")
         # Create selection bias
         biased_nodes = []
         if self.selection_bias_nodes:
@@ -409,6 +413,10 @@ class AcyclicGraphGenerator(object):
                     copy=True,
                 ),
             )
+        e = list(self.g.edges())
+        causal_nex_graph = StructureModel(e)
+        viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
+        viz.draw(f"writing_graph.jpg", format="jpg")
         return (
             self.data,
             nx.relabel_nodes(
