@@ -3,65 +3,86 @@ dense_data_config_all_issues.json
 Skipping:  data/mix_mechanism/dense_small_mixed_all_issues_1
 Skipping:  data/mix_mechanism/dense_small_mixed_all_issues_2
 Skipping:  data/mix_mechanism/dense_small_mixed_all_issues_3
-Skipping:  data/mix_mechanism/dense_med_mixed_all_issues_1
-Skipping:  data/mix_mechanism/dense_med_mixed_all_issues_2
-Skipping:  data/mix_mechanism/dense_med_mixed_all_issues_3
-Skipping:  data/mix_mechanism/dense_large_mixed_all_issues_1
-Skipping:  data/mix_mechanism/dense_large_mixed_all_issues_2
-Skipping:  data/mix_mechanism/dense_large_mixed_all_issues_3
-Skipping:  data/mix_mechanism/dense_x_large_mixed_all_issues_1
-Skipping:  data/mix_mechanism/dense_x_large_mixed_all_issues_2
-Skipping:  data/mix_mechanism/dense_x_large_mixed_all_issues_3
+Generating:  data/mix_mechanism/dense_med_mixed_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 1
+loop_counter: 1, max_loop: 1
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_med_mixed_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 3
+loop_counter: 1, max_loop: 3
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_med_mixed_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 4
+loop_counter: 1, max_loop: 4
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_large_mixed_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 8
+loop_counter: 1, max_loop: 8
+loop_counter: 2, max_loop: 8
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_large_mixed_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 4
+loop_counter: 1, max_loop: 4
+loop_counter: 2, max_loop: 4
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_large_mixed_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 6
+loop_counter: 1, max_loop: 6
+loop_counter: 2, max_loop: 6
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_x_large_mixed_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 11
+loop_counter: 1, max_loop: 11
+loop_counter: 2, max_loop: 11
+loop_counter: 3, max_loop: 11
+loop_counter: 4, max_loop: 11
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_x_large_mixed_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 12
+loop_counter: 1, max_loop: 12
+loop_counter: 2, max_loop: 12
+loop_counter: 3, max_loop: 12
+loop_counter: 4, max_loop: 12
+len(self.data)
+2500
+Generating:  data/mix_mechanism/dense_x_large_mixed_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 9
+loop_counter: 1, max_loop: 9
+loop_counter: 2, max_loop: 9
+loop_counter: 3, max_loop: 9
+loop_counter: 4, max_loop: 9
+len(self.data)
+2500
 Generating data
 dense_data_config_no_issue.json
-Generating:  data/mix_mechanism/dense_small_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_small_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_small_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_med_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_med_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_med_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_large_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_large_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_large_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_x_large_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_x_large_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/dense_x_large_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
+Skipping:  data/mix_mechanism/dense_small_mixed_no_issue_1
+Skipping:  data/mix_mechanism/dense_small_mixed_no_issue_2
+Skipping:  data/mix_mechanism/dense_small_mixed_no_issue_3
+Skipping:  data/mix_mechanism/dense_med_mixed_no_issue_1
+Skipping:  data/mix_mechanism/dense_med_mixed_no_issue_2
+Skipping:  data/mix_mechanism/dense_med_mixed_no_issue_3
+Skipping:  data/mix_mechanism/dense_large_mixed_no_issue_1
+Skipping:  data/mix_mechanism/dense_large_mixed_no_issue_2
+Skipping:  data/mix_mechanism/dense_large_mixed_no_issue_3
+Skipping:  data/mix_mechanism/dense_x_large_mixed_no_issue_1
+Skipping:  data/mix_mechanism/dense_x_large_mixed_no_issue_2
+Skipping:  data/mix_mechanism/dense_x_large_mixed_no_issue_3
 Generating data
 dense_data_config_confounder.json
 Skipping:  data/mix_mechanism/dense_small_mixed_confounder_1
@@ -109,65 +130,86 @@ dense_data_config_all_issues_linear.json
 Skipping:  data/linear_mechanism/dense_small_linear_all_issues_1
 Skipping:  data/linear_mechanism/dense_small_linear_all_issues_2
 Skipping:  data/linear_mechanism/dense_small_linear_all_issues_3
-Skipping:  data/linear_mechanism/dense_med_linear_all_issues_1
-Skipping:  data/linear_mechanism/dense_med_linear_all_issues_2
-Skipping:  data/linear_mechanism/dense_med_linear_all_issues_3
-Skipping:  data/linear_mechanism/dense_large_linear_all_issues_1
-Skipping:  data/linear_mechanism/dense_large_linear_all_issues_2
-Skipping:  data/linear_mechanism/dense_large_linear_all_issues_3
-Skipping:  data/linear_mechanism/dense_x_large_linear_all_issues_1
-Skipping:  data/linear_mechanism/dense_x_large_linear_all_issues_2
-Skipping:  data/linear_mechanism/dense_x_large_linear_all_issues_3
+Generating:  data/linear_mechanism/dense_med_linear_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 1
+loop_counter: 1, max_loop: 1
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_med_linear_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 3
+loop_counter: 1, max_loop: 3
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_med_linear_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 4
+loop_counter: 1, max_loop: 4
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_large_linear_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 8
+loop_counter: 1, max_loop: 8
+loop_counter: 2, max_loop: 8
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_large_linear_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 6
+loop_counter: 1, max_loop: 6
+loop_counter: 2, max_loop: 6
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_large_linear_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 6
+loop_counter: 1, max_loop: 6
+loop_counter: 2, max_loop: 6
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_x_large_linear_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 14
+loop_counter: 1, max_loop: 14
+loop_counter: 2, max_loop: 14
+loop_counter: 3, max_loop: 14
+loop_counter: 4, max_loop: 14
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_x_large_linear_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 11
+loop_counter: 1, max_loop: 11
+loop_counter: 2, max_loop: 11
+loop_counter: 3, max_loop: 11
+loop_counter: 4, max_loop: 11
+len(self.data)
+2500
+Generating:  data/linear_mechanism/dense_x_large_linear_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 9
+loop_counter: 1, max_loop: 9
+loop_counter: 2, max_loop: 9
+loop_counter: 3, max_loop: 9
+loop_counter: 4, max_loop: 9
+len(self.data)
+2500
 Generating data
 dense_data_config_no_issue_linear.json
-Generating:  data/linear_mechanism/dense_small_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_small_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_small_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_med_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_med_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_med_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_large_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_large_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_large_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_x_large_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_x_large_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/dense_x_large_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
+Skipping:  data/linear_mechanism/dense_small_linear_no_issue_1
+Skipping:  data/linear_mechanism/dense_small_linear_no_issue_2
+Skipping:  data/linear_mechanism/dense_small_linear_no_issue_3
+Skipping:  data/linear_mechanism/dense_med_linear_no_issue_1
+Skipping:  data/linear_mechanism/dense_med_linear_no_issue_2
+Skipping:  data/linear_mechanism/dense_med_linear_no_issue_3
+Skipping:  data/linear_mechanism/dense_large_linear_no_issue_1
+Skipping:  data/linear_mechanism/dense_large_linear_no_issue_2
+Skipping:  data/linear_mechanism/dense_large_linear_no_issue_3
+Skipping:  data/linear_mechanism/dense_x_large_linear_no_issue_1
+Skipping:  data/linear_mechanism/dense_x_large_linear_no_issue_2
+Skipping:  data/linear_mechanism/dense_x_large_linear_no_issue_3
 Generating data
 dense_data_config_confounder_linear.json
 Skipping:  data/linear_mechanism/dense_small_linear_confounder_1
@@ -221,59 +263,47 @@ Skipping:  data/mix_mechanism/med_mixed_all_issues_2
 Skipping:  data/mix_mechanism/med_mixed_all_issues_3
 Skipping:  data/mix_mechanism/large_mixed_all_issues_1
 Skipping:  data/mix_mechanism/large_mixed_all_issues_2
-Skipping:  data/mix_mechanism/x_large_mixed_all_issues_1
-Skipping:  data/mix_mechanism/x_large_mixed_all_issues_2
-Skipping:  data/mix_mechanism/x_large_mixed_all_issues_3
+Generating:  data/mix_mechanism/x_large_mixed_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 14
+loop_counter: 1, max_loop: 14
+loop_counter: 2, max_loop: 14
+loop_counter: 3, max_loop: 14
+loop_counter: 4, max_loop: 14
+len(self.data)
+2500
+Generating:  data/mix_mechanism/x_large_mixed_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 18
+loop_counter: 1, max_loop: 18
+loop_counter: 2, max_loop: 18
+loop_counter: 3, max_loop: 18
+loop_counter: 4, max_loop: 18
+len(self.data)
+2500
+Generating:  data/mix_mechanism/x_large_mixed_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 15
+loop_counter: 1, max_loop: 15
+loop_counter: 2, max_loop: 15
+loop_counter: 3, max_loop: 15
+loop_counter: 4, max_loop: 15
+len(self.data)
+2500
 Generating data
 data_config_no_issue.json
-Generating:  data/mix_mechanism/small_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/small_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/small_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/med_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/med_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/med_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/large_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/large_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/large_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/x_large_mixed_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/x_large_mixed_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/mix_mechanism/x_large_mixed_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
+Skipping:  data/mix_mechanism/small_mixed_no_issue_1
+Skipping:  data/mix_mechanism/small_mixed_no_issue_2
+Skipping:  data/mix_mechanism/small_mixed_no_issue_3
+Skipping:  data/mix_mechanism/med_mixed_no_issue_1
+Skipping:  data/mix_mechanism/med_mixed_no_issue_2
+Skipping:  data/mix_mechanism/med_mixed_no_issue_3
+Skipping:  data/mix_mechanism/large_mixed_no_issue_1
+Skipping:  data/mix_mechanism/large_mixed_no_issue_2
+Skipping:  data/mix_mechanism/large_mixed_no_issue_3
+Skipping:  data/mix_mechanism/x_large_mixed_no_issue_1
+Skipping:  data/mix_mechanism/x_large_mixed_no_issue_2
+Skipping:  data/mix_mechanism/x_large_mixed_no_issue_3
 Generating data
 data_config_confounder.json
 Skipping:  data/mix_mechanism/small_mixed_confounder_1
@@ -318,68 +348,116 @@ Skipping:  data/mix_mechanism/x_large_mixed_unfaithful_2
 Skipping:  data/mix_mechanism/x_large_mixed_unfaithful_3
 Generating data
 data_config_all_issues_linear.json
-Skipping:  data/linear_mechanism/small_linear_all_issues_1
-Skipping:  data/linear_mechanism/small_linear_all_issues_2
-Skipping:  data/linear_mechanism/small_linear_all_issues_3
-Skipping:  data/linear_mechanism/med_linear_all_issues_1
-Skipping:  data/linear_mechanism/med_linear_all_issues_2
-Skipping:  data/linear_mechanism/med_linear_all_issues_3
-Skipping:  data/linear_mechanism/large_linear_all_issues_1
-Skipping:  data/linear_mechanism/large_linear_all_issues_2
-Skipping:  data/linear_mechanism/large_linear_all_issues_3
-Skipping:  data/linear_mechanism/x_large_linear_all_issues_1
-Skipping:  data/linear_mechanism/x_large_linear_all_issues_2
-Skipping:  data/linear_mechanism/x_large_linear_all_issues_3
+Generating:  data/linear_mechanism/small_linear_all_issues_1
+Generate Count: 1
+number_nodes_with_two_or_more_parents less than confounders
+HERE4
+Generate Count: 2
+loop_counter: 0, max_loop: 3
+len(self.data)
+2500
+Generating:  data/linear_mechanism/small_linear_all_issues_2
+Generate Count: 1
+number_nodes_with_two_or_more_parents less than confounders
+HERE4
+Generate Count: 2
+loop_counter: 0, max_loop: 2
+len(self.data)
+2500
+Generating:  data/linear_mechanism/small_linear_all_issues_3
+Generate Count: 1
+number_nodes_with_two_or_more_parents less than confounders
+HERE4
+Generate Count: 2
+number_nodes_with_two_or_more_parents less than confounders
+HERE4
+Generate Count: 3
+loop_counter: 0, max_loop: 2
+len(self.data)
+2500
+Generating:  data/linear_mechanism/med_linear_all_issues_1
+Generate Count: 1
+number_nodes_with_two_or_more_parents less than confounders
+HERE4
+Generate Count: 2
+loop_counter: 0, max_loop: 3
+loop_counter: 1, max_loop: 3
+len(self.data)
+2500
+Generating:  data/linear_mechanism/med_linear_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 3
+loop_counter: 1, max_loop: 3
+len(self.data)
+2500
+Generating:  data/linear_mechanism/med_linear_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 3
+loop_counter: 1, max_loop: 3
+len(self.data)
+2500
+Generating:  data/linear_mechanism/large_linear_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 7
+loop_counter: 1, max_loop: 7
+loop_counter: 2, max_loop: 7
+len(self.data)
+2500
+Generating:  data/linear_mechanism/large_linear_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 4
+loop_counter: 1, max_loop: 4
+loop_counter: 2, max_loop: 4
+len(self.data)
+2500
+Generating:  data/linear_mechanism/large_linear_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 4
+loop_counter: 1, max_loop: 4
+loop_counter: 2, max_loop: 4
+len(self.data)
+2500
+Generating:  data/linear_mechanism/x_large_linear_all_issues_1
+Generate Count: 1
+loop_counter: 0, max_loop: 14
+loop_counter: 1, max_loop: 14
+loop_counter: 2, max_loop: 14
+loop_counter: 3, max_loop: 14
+loop_counter: 4, max_loop: 14
+len(self.data)
+2500
+Generating:  data/linear_mechanism/x_large_linear_all_issues_2
+Generate Count: 1
+loop_counter: 0, max_loop: 19
+loop_counter: 1, max_loop: 19
+loop_counter: 2, max_loop: 19
+loop_counter: 3, max_loop: 19
+loop_counter: 4, max_loop: 19
+len(self.data)
+2500
+Generating:  data/linear_mechanism/x_large_linear_all_issues_3
+Generate Count: 1
+loop_counter: 0, max_loop: 15
+loop_counter: 1, max_loop: 15
+loop_counter: 2, max_loop: 15
+loop_counter: 3, max_loop: 15
+loop_counter: 4, max_loop: 15
+len(self.data)
+2500
 Generating data
 data_config_no_issue_linear.json
-Generating:  data/linear_mechanism/small_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/small_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/small_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/med_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/med_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/med_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/large_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/large_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/large_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/x_large_linear_no_issue_1
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/x_large_linear_no_issue_2
-Generate Count: 1
-len(self.data)
-2500
-Generating:  data/linear_mechanism/x_large_linear_no_issue_3
-Generate Count: 1
-len(self.data)
-2500
+Skipping:  data/linear_mechanism/small_linear_no_issue_1
+Skipping:  data/linear_mechanism/small_linear_no_issue_2
+Skipping:  data/linear_mechanism/small_linear_no_issue_3
+Skipping:  data/linear_mechanism/med_linear_no_issue_1
+Skipping:  data/linear_mechanism/med_linear_no_issue_2
+Skipping:  data/linear_mechanism/med_linear_no_issue_3
+Skipping:  data/linear_mechanism/large_linear_no_issue_1
+Skipping:  data/linear_mechanism/large_linear_no_issue_2
+Skipping:  data/linear_mechanism/large_linear_no_issue_3
+Skipping:  data/linear_mechanism/x_large_linear_no_issue_1
+Skipping:  data/linear_mechanism/x_large_linear_no_issue_2
+Skipping:  data/linear_mechanism/x_large_linear_no_issue_3
 Generating data
 data_config_confounder_linear.json
 Skipping:  data/linear_mechanism/small_linear_confounder_1

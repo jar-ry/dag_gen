@@ -57,7 +57,7 @@
             "parents_max": 4,
             "confounders": 2,
             "num_unfaithful_nodes": 2,
-            "random_seed": 39,
+            "random_seed": 42,
             "dag_type": "default"
         },
         "dense_med_linear_all_issues_2": {
