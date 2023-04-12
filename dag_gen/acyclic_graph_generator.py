@@ -47,7 +47,8 @@ from .dag_generator import DAG_Generator
 import random
 import copy
 import json
-
+from causalnex.structure import StructureModel
+from causalnex.plots import plot_structure
 
 class Regenerate_Dag(Exception):
     """Exception raised for errors in the input.
@@ -318,6 +319,10 @@ class AcyclicGraphGenerator(object):
                         if n not in self.deleted_nodes + [parent_to_remove]
                     ]
                     subgraph = self.g.subgraph(remaining_nodes)
+                    e = list(subgraph.edges())
+                    causal_nex_graph = StructureModel(e)
+                    viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
+                    viz.draw("test.jpg", format="jpg")
                     if nx.is_weakly_connected(subgraph):
                         print("parent_to_remove")
                         print(parent_to_remove)

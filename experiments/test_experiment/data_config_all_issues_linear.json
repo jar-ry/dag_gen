@@ -1,0 +1,19 @@
+{
+    "linear_mechanism": {
+        "large_linear_all_issues_2": {
+            "causal_mechanism": "linear",
+            "noise": "gaussian",
+            "noise_coeff": 0.3,
+            "selection_bias_nodes": 3,
+            "selection_bias_ratio": 0.5,
+            "selection_bias_range": [0, 0.5],
+            "npoints": 2500,
+            "nodes": 25,
+            "parents_max": 1,
+            "confounders": 3,
+            "num_unfaithful_nodes": 3,
+            "random_seed": 43,
+            "dag_type": "default"
+        }
+    }
+}
