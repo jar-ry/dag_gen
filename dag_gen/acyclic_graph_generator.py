@@ -460,11 +460,11 @@ class AcyclicGraphGenerator(object):
         e = list(graph.edges())
         causal_nex_graph = StructureModel(e)
         viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-        viz.draw("writing_output", format="jpg")
+        viz.draw("writing_output.jpg", format="jpg")
 
         dag_graph_data = np.load(data_path + f"/DAG{data_index}.npy")
         graph_read = nx.from_numpy_array(dag_graph_data, create_using=nx.DiGraph)
         e = list(graph_read.edges())
         causal_nex_graph = StructureModel(e)
         viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-        viz.draw("reading_output", format="jpg")
+        viz.draw("reading_output.jpg", format="jpg")
