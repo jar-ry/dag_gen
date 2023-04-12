@@ -47,8 +47,6 @@ from .dag_generator import DAG_Generator
 import random
 import copy
 import json
-from causalnex.structure import StructureModel
-from causalnex.plots import plot_structure
 
 class Regenerate_Dag(Exception):
     """Exception raised for errors in the input.
@@ -334,10 +332,6 @@ class AcyclicGraphGenerator(object):
                     f"Confounder not generated. Current random seed: {self.random_seed}",
                 )
 
-        e = list(self.g.edges())
-        causal_nex_graph = StructureModel(e)
-        viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-        viz.draw(f"final.jpg", format="jpg")
         # Create selection bias
         biased_nodes = []
         if self.selection_bias_nodes:
@@ -398,10 +392,7 @@ class AcyclicGraphGenerator(object):
                     copy=True,
                 ),
             )
-        e = list(self.g.edges())
-        causal_nex_graph = StructureModel(e)
-        viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-        viz.draw(f"writing_graph.jpg", format="jpg")
+
         return (
             self.data,
             nx.relabel_nodes(
@@ -441,15 +432,3 @@ class AcyclicGraphGenerator(object):
 
         with open(data_path + "/causal_mechanisms.json", "w", encoding="utf-8") as f:
             json.dump(node_parent_mech, f, ensure_ascii=False, indent=4)
-
-        e = list(graph.edges())
-        causal_nex_graph = StructureModel(e)
-        viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-        viz.draw("writing_output.jpg", format="jpg")
-
-        dag_graph_data = np.load(data_path + f"/DAG{data_index}.npy")
-        graph_read = nx.from_numpy_array(dag_graph_data, create_using=nx.DiGraph)
-        e = list(graph_read.edges())
-        causal_nex_graph = StructureModel(e)
-        viz = plot_structure(causal_nex_graph)  # Default CausalNex visualisation
-        viz.draw("reading_output.jpg", format="jpg")
