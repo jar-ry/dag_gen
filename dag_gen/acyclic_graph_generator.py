@@ -281,7 +281,7 @@ class AcyclicGraphGenerator(object):
                 n
                 for n in self.g.nodes
                 if len(list(self.g.predecessors(n))) >= 2
-                and n not in self.unfaithful_nodes
+                and all(pred not in self.unfaithful_nodes for pred in self.g.predecessors(n))
             ]
             loop_max = len(multi_parent_nodes)
 
@@ -300,7 +300,7 @@ class AcyclicGraphGenerator(object):
                     n
                     for n in self.g.nodes
                     if len(list(self.g.predecessors(n))) >= 2
-                    and n not in self.unfaithful_nodes
+                    and all(pred not in self.unfaithful_nodes for pred in self.g.predecessors(n))
                 ]
                 print("multi_parent_nodes")
                 print(multi_parent_nodes)
