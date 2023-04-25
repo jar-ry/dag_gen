@@ -283,7 +283,8 @@ def run_test(test_name, mech_name, algo_name):
 
 
 if __name__ == "__main__":
-    print("Running test")
+    ts_test = time.time()
+    print("Running test: ", ts_test)
     print('cmd entry:', sys.argv)
     test_name = sys.argv[1]
     mech_name = sys.argv[2]
