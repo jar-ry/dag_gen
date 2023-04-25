@@ -175,6 +175,9 @@ def run_test():
         if not os.path.isdir(causal_mech_result_dir):
             os.mkdir(causal_mech_result_dir)
         for dataset in dataset_dirs:
+            ts = time.time()
+            print("Running new dataset: ", ts)
+
             # Configure paths
             dataset_dir = os.path.join(causal_mech_data_dir, dataset)
             data_path = os.path.join(dataset_dir, "data1.npy")
