@@ -80,7 +80,7 @@ def run_sam(data: array, output_path: str):
     if not os.path.isdir(sam_result_dir):
         os.mkdir(sam_result_dir)
     time0 = time.time()
-    obj = SAM(gpus=1, njobs=2, nruns=32)
+    obj = SAM(gpus=1, njobs=2, nruns=32, verbose=False)
     output = obj.predict(DataFrame(data).astype(float32))
     pred = to_numpy_matrix(output)
     time1 = time.time()
