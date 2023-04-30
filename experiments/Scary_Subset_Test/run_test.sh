@@ -2,7 +2,7 @@
 # Mix Mech Select Bias 1
 python ./../run_test_vm.py large_linear_all_issues_1 linear_mechanism SAM
 python ./../run_test_vm.py large_linear_all_issues_1 linear_mechanism DAG_GNN
-# python ./../run_test_vm.py large_linear_all_issues_1 linear_mechanism GRAN_DAG
+python ./../run_test_vm.py large_linear_all_issues_1 linear_mechanism GRAN_DAG
 python ./../run_test_vm.py large_linear_all_issues_1 linear_mechanism RL_BIC
 
 # Mix Mech Select Bias 2
