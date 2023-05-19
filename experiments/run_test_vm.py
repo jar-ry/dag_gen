@@ -13,7 +13,6 @@ load_dotenv()
 
 DATA_DIR = "data"
 RESULT_DIR = "results"
-cdt.SETTINGS.rpath = os.getenv("RSCRIPT_PATH")  # path to your r executable
 
 
 def run_notears(data: array, output_path: str):
@@ -230,39 +229,39 @@ def run_test(test_name, mech_name, algo_name):
                                 # Run SAM (https://arxiv.org/abs/1803.04929v5)
                                 run_sam(data=test_data, output_path=dataset_result_dir)
 
-                    if algo_name == "RL_BIC":
-                        if not os.path.isdir(rl_bic_result_dir):
-                            # Run RL-BIC
-                            run_rl_bic(
-                                data_path=dataset_dir,
-                                output_path=dataset_result_dir,
-                                shape=test_data.shape,
-                            )
-                        else:
-                            if len(os.listdir(rl_bic_result_dir)) == 0:
-                                # Run RL-BIC
-                                run_rl_bic(
-                                    data_path=dataset_dir,
-                                    output_path=dataset_result_dir,
-                                    shape=test_data.shape,
-                                )
+                    # if algo_name == "RL_BIC":
+                    #     if not os.path.isdir(rl_bic_result_dir):
+                    #         # Run RL-BIC
+                    #         run_rl_bic(
+                    #             data_path=dataset_dir,
+                    #             output_path=dataset_result_dir,
+                    #             shape=test_data.shape,
+                    #         )
+                    #     else:
+                    #         if len(os.listdir(rl_bic_result_dir)) == 0:
+                    #             # Run RL-BIC
+                    #             run_rl_bic(
+                    #                 data_path=dataset_dir,
+                    #                 output_path=dataset_result_dir,
+                    #                 shape=test_data.shape,
+                    #             )
 
-                    if algo_name == "GRAN_DAG":
-                        if not os.path.isdir(gran_dag_result_dir):
-                            # Run Gran Dag
-                            run_gran_dag(
-                                data_path=dataset_dir,
-                                output_path=dataset_result_dir,
-                                shape=test_data.shape,
-                            )
-                        else:
-                            if len(os.listdir(gran_dag_result_dir)) == 0:
-                                # Run Gran Dag
-                                run_gran_dag(
-                                    data_path=dataset_dir,
-                                    output_path=dataset_result_dir,
-                                    shape=test_data.shape,
-                                )
+                    # if algo_name == "GRAN_DAG":
+                    #     if not os.path.isdir(gran_dag_result_dir):
+                    #         # Run Gran Dag
+                    #         run_gran_dag(
+                    #             data_path=dataset_dir,
+                    #             output_path=dataset_result_dir,
+                    #             shape=test_data.shape,
+                    #         )
+                    #     else:
+                    #         if len(os.listdir(gran_dag_result_dir)) == 0:
+                    #             # Run Gran Dag
+                    #             run_gran_dag(
+                    #                 data_path=dataset_dir,
+                    #                 output_path=dataset_result_dir,
+                    #                 shape=test_data.shape,
+                    #             )
 
                     if algo_name == "DAG_GNN":
                         if not os.path.isdir(dag_gnn_result_dir):
