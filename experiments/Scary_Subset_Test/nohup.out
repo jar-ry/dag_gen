@@ -1,0 +1,240 @@
+Detecting 1 CUDA device(s).
+Running test:  1683963458.9903848
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_1', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_all_issues_1 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963460.7063076
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_1', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_all_issues_1 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963462.469538
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_1', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_all_issues_1 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963464.1956
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_1', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_all_issues_1 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963465.921713
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_2', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_all_issues_2 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963467.6394732
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_2', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_all_issues_2 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963469.3662188
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_2', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_all_issues_2 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963471.0954378
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_2', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_all_issues_2 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963472.8221493
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_3', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_all_issues_3 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963474.5528765
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_3', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_all_issues_3 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963476.2880898
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_3', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_all_issues_3 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963478.0183783
+cmd entry: ['./../run_test_vm.py', 'small_linear_all_issues_3', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_all_issues_3 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963479.7447898
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_1', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_confounder_1 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963481.4773343
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_1', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_confounder_1 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963483.216377
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_1', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_confounder_1 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963484.9473298
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_1', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_confounder_1 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963486.677918
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_2', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_confounder_2 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963488.4062645
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_2', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_confounder_2 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963490.1440606
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_2', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_confounder_2 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963491.872261
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_2', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_confounder_2 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963493.5995169
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_3', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_confounder_3 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963495.3255076
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_3', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_confounder_3 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963497.0735862
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_3', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_confounder_3 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963498.8574445
+cmd entry: ['./../run_test_vm.py', 'small_linear_confounder_3', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_confounder_3 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963500.5844934
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_1', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_no_issue_1 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963502.3139896
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_1', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_no_issue_1 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963504.0390446
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_1', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_no_issue_1 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963505.760313
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_1', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_no_issue_1 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963507.4964147
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_2', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_no_issue_2 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963509.227971
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_2', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_no_issue_2 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963510.9648535
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_2', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_no_issue_2 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963512.725621
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_2', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_no_issue_2 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963514.4503973
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_3', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_no_issue_3 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963516.2123823
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_3', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_no_issue_3 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963517.9360833
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_3', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_no_issue_3 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963519.666845
+cmd entry: ['./../run_test_vm.py', 'small_linear_no_issue_3', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_no_issue_3 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963521.3893783
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_1', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_selection_bias_1 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963523.108757
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_1', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_selection_bias_1 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963524.8439305
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_1', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_selection_bias_1 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963526.5699778
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_1', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_selection_bias_1 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963528.3044484
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_2', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_selection_bias_2 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963530.035464
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_2', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_selection_bias_2 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963531.7657473
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_2', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_selection_bias_2 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963533.4842818
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_2', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_selection_bias_2 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963535.225691
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_3', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_selection_bias_3 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963536.9597719
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_3', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_selection_bias_3 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963538.6928978
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_3', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_selection_bias_3 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963540.4204938
+cmd entry: ['./../run_test_vm.py', 'small_linear_selection_bias_3', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_selection_bias_3 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963542.1481225
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_1', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_unfaithful_1 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963543.880423
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_1', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_unfaithful_1 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963545.6389663
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_1', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_unfaithful_1 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963547.3870223
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_1', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_unfaithful_1 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963549.1106205
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_2', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_unfaithful_2 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963550.847303
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_2', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_unfaithful_2 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963552.5820613
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_2', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_unfaithful_2 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963554.3127787
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_2', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_unfaithful_2 RL_BIC
+Detecting 1 CUDA device(s).
+Running test:  1683963556.0431426
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_3', 'linear_mechanism', 'SAM']
+Running  linear_mechanism small_linear_unfaithful_3 SAM
+Detecting 1 CUDA device(s).
+Running test:  1683963557.775834
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_3', 'linear_mechanism', 'DAG_GNN']
+Running  linear_mechanism small_linear_unfaithful_3 DAG_GNN
+Detecting 1 CUDA device(s).
+Running test:  1683963559.5056088
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_3', 'linear_mechanism', 'GRAN_DAG']
+Running  linear_mechanism small_linear_unfaithful_3 GRAN_DAG
+Detecting 1 CUDA device(s).
+Running test:  1683963561.2356777
+cmd entry: ['./../run_test_vm.py', 'small_linear_unfaithful_3', 'linear_mechanism', 'RL_BIC']
+Running  linear_mechanism small_linear_unfaithful_3 RL_BIC
