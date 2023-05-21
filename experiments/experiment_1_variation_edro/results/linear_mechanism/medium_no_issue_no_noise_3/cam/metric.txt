@@ -1,0 +1,1 @@
+{"fdr": 0.5714285714285714, "tpr": 0.45, "fpr": 1.5, "shd": 18, "false_pos": 7, "false_neg": 6, "reserved_edges": 5, "pred_size": 21, "true_size": 20, "timing": "17.726414918899536"}
